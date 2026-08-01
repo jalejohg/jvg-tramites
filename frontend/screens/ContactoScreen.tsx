@@ -11,6 +11,7 @@ import {
   CONTACT_FORM_ID,
   SITE,
   mailLink,
+  mapsEmbedUrl,
   mapsLink,
   waLink,
 } from "@/lib/siteConfig";
@@ -169,7 +170,7 @@ export default function ContactoScreen() {
               <div className="overflow-hidden border border-border">
                 <iframe
                   title={`Mapa — ${SITE.address}`}
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent(SITE.address)}&z=15&output=embed`}
+                  src={mapsEmbedUrl()}
                   className="h-64 w-full lg:h-80"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
