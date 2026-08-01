@@ -9,14 +9,18 @@ const SHORTCUTS = [
   { href: "/servicios", label: "Servicios" },
   { href: "/homologacion", label: "Homologación" },
   { href: "/proceso", label: "Proceso" },
+  { href: "/preguntas-frecuentes", label: "Preguntas" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
 
-const BG_IMAGE = "/images/lago-camino.jpg";
+const BG_IMAGE = "/images/lago-camino.webp";
 
 export default function NotFoundScreen() {
   return (
-    <main className="relative flex min-h-[calc(100dvh-4rem)] flex-col overflow-hidden">
+    <main
+      id="contenido-principal"
+      className="relative flex min-h-[calc(100dvh-4rem)] flex-col overflow-hidden"
+    >
       <Image
         src={BG_IMAGE}
         alt=""

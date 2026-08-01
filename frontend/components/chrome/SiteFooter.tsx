@@ -1,8 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import FooterNavLink from "@/components/chrome/FooterNavLink";
 import { SERVICES } from "@/data/content";
 import { SITE, mailLink, mapsEmbedUrl, mapsLink, waLink } from "@/lib/siteConfig";
+
+const EXPLORE_LINKS = [
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/proceso", label: "Proceso" },
+  { href: "/preguntas-frecuentes", label: "Preguntas" },
+  { href: "/contacto", label: "Contacto" },
+] as const;
 
 export default function SiteFooter() {
   return (
@@ -16,12 +24,19 @@ export default function SiteFooter() {
               alt={SITE.name}
               width={96}
               height={96}
-              className="h-14 w-auto brightness-110"
+              className="h-14 w-auto brightness-110 no-zoom"
             />
             <p className="mt-4 font-serif text-lg text-on-cta/90">
               {SITE.slogan}
             </p>
             <p className="mt-3 text-sm text-on-cta/65">{SITE.locationLabel}</p>
+            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              {EXPLORE_LINKS.map((link) => (
+                <li key={link.href}>
+                  <FooterNavLink href={link.href} label={link.label} />
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>
