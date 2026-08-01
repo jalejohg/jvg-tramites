@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import ContactoScreen from "@/screens/ContactoScreen";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contacto",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contacto · Solicitar asesoría migratoria",
   description:
-    "Solicite asesoría con nuestro formulario o WhatsApp. Le contactaremos con claridad sobre su caso.",
-};
+    "Solicite asesoría migratoria por formulario paso a paso o WhatsApp. Respuesta humana, evaluación de viabilidad y orientación clara sobre su caso.",
+  path: "/contacto",
+});
 
 export default function ContactoPage() {
   return <ContactoScreen />;
