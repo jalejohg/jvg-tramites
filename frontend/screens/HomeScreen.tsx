@@ -1,19 +1,23 @@
-import Image from "next/image";
+import HomeHero from "@/components/home/HomeHero";
+import HomeServices from "@/components/home/HomeServices";
+import HomePillars from "@/components/home/HomePillars";
+import HomeProcess from "@/components/home/HomeProcess";
+import HomeDirector from "@/components/home/HomeDirector";
+import HomeCounters from "@/components/home/HomeCounters";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
+import HomeCta from "@/components/home/HomeCta";
 
 export default function HomeScreen() {
   return (
-    <main className="flex min-h-full flex-1 flex-col items-center justify-center bg-black px-6 py-16">
-      <Image
-        src="/logo.png"
-        alt="JVG Trámites Migratorios"
-        width={420}
-        height={220}
-        priority
-        className="h-auto w-full max-w-md"
-      />
-      <p className="mt-8 text-center text-sm tracking-[0.2em] text-zinc-400 uppercase">
-        Sitio en construcción
-      </p>
+    <main>
+      <HomeHero />
+      <HomeServices />
+      <HomePillars />
+      <HomeProcess />
+      <HomeDirector />
+      <HomeCounters />
+      <HomeTestimonials />
+      <HomeCta />
     </main>
   );
 }
