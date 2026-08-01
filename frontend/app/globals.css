@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   TRÁMITES MIGRATORIOS JVG — Design tokens
+   Trust & Authority · beige / negro / dorado · sin dark mode
+   ============================================================ */
+
+@theme {
+  --color-bg: #f7f4ef;
+  --color-surface: #ffffff;
+  --color-ink: #141414;
+  --color-muted: #5c5a56;
+  --color-border: #e4dfd6;
+  --color-gold: #c4a35a;
+  --color-gold-deep: #9a7b2f;
+  --color-gold-soft: #e8d5a3;
+  --color-warm: #efe6d8;
+  --color-cta: #141414;
+  --color-cta-hover: #2a2a2a;
+  --color-on-cta: #f7f4ef;
+  --color-destructive: #b91c1c;
+  --color-ring: #c4a35a;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 20, 20, 0.04);
+  --shadow-md: 0 4px 16px rgba(20, 20, 20, 0.08);
+  --shadow-lg: 0 12px 40px rgba(20, 20, 20, 0.12);
+
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-wapulse: wapulse 2s infinite;
+  --animate-step-in: stepIn 0.35s var(--ease-fluid);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-cormorant), "Georgia", serif;
+  --font-sans: var(--font-source-sans), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes wapulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-gold) 35%, transparent);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 3px;
+}
+
+/* Zoom-in al hover en fotos de contenido (no fondos ni logos) */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  img:not(.img-bg):not(.no-zoom) {
+    transition: transform 0.55s var(--ease-fluid);
+  }
+
+  *:has(> img:not(.img-bg):not(.no-zoom)):hover > img:not(.img-bg):not(.no-zoom),
+  .group:hover img:not(.img-bg):not(.no-zoom) {
+    transform: scale(1.06);
+  }
 }
