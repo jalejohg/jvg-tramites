@@ -7,10 +7,34 @@
 export const SITE = {
   name: "Trámites Migratorios JVG",
   shortName: "JVG",
-  /** Slogan oficial del logotipo en /public/logo.png */
+  /** Logotipo oficial (public/logo_oficial.png). */
+  logo: "/logo_oficial.png",
+  /** Slogan oficial del logotipo. */
   slogan: "Tu camino, nuestro compromiso.",
   /** Frase de posicionamiento del material promocional (enfoque México). */
   taglineMexico: "Su futuro en México está en manos expertas.",
+  /**
+   * SEO: título por defecto (pestaña / SERP cuando no hay título de página).
+   * Las rutas hijas usan el template `%s · ${SITE.name}`.
+   */
+  titleDefault: "Trámites Migratorios JVG · Tu camino, nuestro compromiso",
+  /**
+   * SEO: meta description del sitio (~155 caracteres).
+   * Orientada a búsqueda: consultoría, México, documentos, homologación.
+   */
+  description:
+    "Consultoría jurídica y trámites migratorios: México, legalización, apostilla, homologación de títulos y soporte familiar, con gestión en Cienfuegos.",
+  /** Palabras clave de apoyo (Google ya no las usa como ranking; útiles para otros motores / coherencia). */
+  keywords: [
+    "trámites migratorios",
+    "consultoría jurídica",
+    "residencia México",
+    "apostilla",
+    "legalización de documentos",
+    "homologación de títulos",
+    "Cienfuegos",
+    "JVG",
+  ],
   director: "Josue Vega Gómez",
   directorCourtesy: "Lic.",
   directorRole:
@@ -27,8 +51,8 @@ export const SITE = {
   /** Correo del material promocional. */
   email: "josuevevagomez88@gmail.com",
   /** Ubicación de contacto citada en flyers (calle exacta pendiente). */
-  address: "Ave Polanco, AGENCY GLOBAL PASS",
-  /** Approx. Polanco / CDMX — solo referencia de mapa hasta tener calle completa. */
+  address: "Ave Polanco, AGENCY GLOBAL PASS, Ciudad de México",
+  /** Polanco / Ciudad de México — pin del mapa embebido. */
   mapCoords: { lat: 19.4338, lng: -99.1947 },
   /**
    * Perfil de Facebook: el cuestionario cita «Josue Vega Gomez» sin URL exacta.
@@ -41,10 +65,11 @@ export const SITE = {
     "CDMX presencial · Virtual en México · Gestión en Cienfuegos",
 } as const;
 
-const DEFAULT_WA_TEXT =
+/** Mensaje precargado al abrir el chat de WhatsApp desde el sitio. */
+export const WA_DEFAULT_MESSAGE =
   "Hola, vengo del sitio web de Trámites Migratorios JVG y me gustaría solicitar asesoría.";
 
-export function waLink(text: string = DEFAULT_WA_TEXT): string {
+export function waLink(text: string = WA_DEFAULT_MESSAGE): string {
   return `https://wa.me/${SITE.waNumber}?text=${encodeURIComponent(text)}`;
 }
 
@@ -56,11 +81,11 @@ export const CONTACT_FORM_ID = "formulario";
 export const CONTACT_FORM_HREF = `/contacto#${CONTACT_FORM_ID}`;
 
 export function mapsEmbedUrl(): string {
-  const q = encodeURIComponent(SITE.address);
-  return `https://www.google.com/maps?q=${q}&output=embed`;
+  const { lat, lng } = SITE.mapCoords;
+  return `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
 }
 
 export function mapsLink(): string {
-  const q = encodeURIComponent(SITE.address);
-  return `https://www.google.com/maps/search/?api=1&query=${q}`;
+  const { lat, lng } = SITE.mapCoords;
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 }
