@@ -52,7 +52,7 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
       id: "naturaleza",
       title: "3. Naturaleza de la información y de la asesoría",
       paragraphs: [
-        "El contenido del Sitio (textos, descripciones de procesos, plazos orientativos, preguntas frecuentes y materiales similares) tiene finalidad informativa y divulgativa. No constituye, por sí solo, una opinión jurídica personalizada, un dictamen vinculante ni el inicio de una relación abogado-cliente.",
+        "El contenido del Sitio (textos, descripciones de procesos, plazos orientativos y materiales similares) tiene finalidad informativa y divulgativa. No constituye, por sí solo, una opinión jurídica personalizada, un dictamen vinculante ni el inicio de una relación abogado-cliente.",
         "La relación profesional y el secreto profesional aplicables se perfeccionan cuando existe un encargo aceptado por ambas partes, con el alcance y las condiciones expresamente convenidas. Hasta ese momento, las comunicaciones preliminares se entienden como solicitudes de información o de cotización.",
         `Las decisiones de autoridades migratorias, consulares, registrales, educativas u otras son autónomas. ${SITE.name} no garantiza la aprobación de visas, residencias, naturalizaciones, homologaciones, citas, apostillas ni ningún otro resultado que dependa de terceros o de la valoración discrecional de una autoridad.`,
       ],

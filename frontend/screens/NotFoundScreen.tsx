@@ -9,7 +9,6 @@ const SHORTCUTS = [
   { href: "/servicios", label: "Servicios" },
   { href: "/homologacion", label: "Homologación" },
   { href: "/proceso", label: "Proceso" },
-  { href: "/preguntas-frecuentes", label: "Preguntas" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
 

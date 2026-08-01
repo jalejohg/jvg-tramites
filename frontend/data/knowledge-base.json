@@ -41,7 +41,6 @@
     { "href": "/homologacion", "label": "Homologación" },
     { "href": "/nosotros", "label": "Nosotros" },
     { "href": "/proceso", "label": "Proceso" },
-    { "href": "/preguntas-frecuentes", "label": "Preguntas" },
     { "href": "/contacto", "label": "Contacto" }
   ],
   "services": [

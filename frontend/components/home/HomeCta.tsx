@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
@@ -46,16 +45,6 @@ export default function HomeCta() {
                 WhatsApp
               </Button>
             </div>
-            <p className="mt-6 text-sm text-muted">
-              ¿Dudas antes de escribir? Consulte las{" "}
-              <Link
-                href="/preguntas-frecuentes"
-                className="font-medium text-ink underline decoration-gold/50 underline-offset-2 transition-colors hover:text-gold-deep cursor-pointer"
-              >
-                preguntas frecuentes
-              </Link>
-              .
-            </p>
           </div>
         </Reveal>
       </Container>

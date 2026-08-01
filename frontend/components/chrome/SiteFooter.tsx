@@ -8,7 +8,6 @@ import { SITE, mailLink, mapsEmbedUrl, mapsLink, waLink } from "@/lib/siteConfig
 const EXPLORE_LINKS = [
   { href: "/nosotros", label: "Nosotros" },
   { href: "/proceso", label: "Proceso" },
-  { href: "/preguntas-frecuentes", label: "Preguntas" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
 
