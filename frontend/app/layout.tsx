@@ -20,18 +20,34 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export const metadata: Metadata = {
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
+  applicationName: SITE.name,
   title: {
-    default: `${SITE.name} · ${SITE.slogan}`,
+    default: SITE.titleDefault,
     template: `%s · ${SITE.name}`,
   },
-  description:
-    "Consultoría jurídica y trámites migratorios. Especialistas en México, legalización, homologación y soporte familiar con gestión en Cienfuegos.",
+  description: SITE.description,
+  keywords: [...SITE.keywords],
+  authors: [{ name: `${SITE.directorCourtesy} ${SITE.director}` }],
+  creator: SITE.name,
   openGraph: {
-    title: SITE.name,
-    description: SITE.slogan,
-    locale: "es",
+    title: SITE.titleDefault,
+    description: SITE.description,
+    siteName: SITE.name,
+    locale: "es_MX",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: SITE.titleDefault,
+    description: SITE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
