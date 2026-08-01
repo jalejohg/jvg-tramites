@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { SERVICES } from "@/data/content";
-import { SITE, mailLink, mapsLink, waLink } from "@/lib/siteConfig";
+import { SITE, mailLink, mapsEmbedUrl, mapsLink, waLink } from "@/lib/siteConfig";
 
 export default function SiteFooter() {
   return (
@@ -12,11 +12,11 @@ export default function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Image
-              src="/logo.png"
+              src={SITE.logo}
               alt={SITE.name}
-              width={140}
-              height={64}
-              className="h-12 w-auto brightness-110"
+              width={96}
+              height={96}
+              className="h-14 w-auto brightness-110"
             />
             <p className="mt-4 font-serif text-lg text-on-cta/90">
               {SITE.slogan}
@@ -105,7 +105,7 @@ export default function SiteFooter() {
             <div className="mt-4 overflow-hidden rounded-sm border border-white/10">
               <iframe
                 title={`Mapa — ${SITE.address}`}
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(SITE.address)}&z=15&output=embed`}
+                src={mapsEmbedUrl()}
                 className="h-36 w-full grayscale-[0.2] contrast-[1.05]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

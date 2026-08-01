@@ -47,10 +47,10 @@ export default function SiteHeader() {
             className="relative flex shrink-0 items-center"
           >
             <Image
-              src="/logo.png"
+              src={SITE.logo}
               alt={SITE.name}
-              width={160}
-              height={72}
+              width={112}
+              height={112}
               priority
               className={cn(
                 "h-auto w-auto transition-[height,width] duration-300",
