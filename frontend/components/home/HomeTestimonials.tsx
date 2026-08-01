@@ -18,12 +18,6 @@ function QuoteItem({ item, index }: { item: Testimonial; index: number }) {
             </span>
             <span className="text-sm text-muted">{item.role}</span>
           </cite>
-          {item.provisional && (
-            <span className="mt-1 block text-[0.65rem] uppercase tracking-wider text-muted/60">
-              {/* TODO: testimonio temporal — sustituir por citas reales */}
-              provisional
-            </span>
-          )}
         </footer>
       </div>
     </Reveal>
@@ -31,7 +25,7 @@ function QuoteItem({ item, index }: { item: Testimonial; index: number }) {
 }
 
 /**
- * Storybook visual de entregas reales + citas de tono.
+ * Storybook visual de entregas reales + testimonios del cliente.
  * Patrón ui-ux-pro-max: Portfolio Grid + Hero/Testimonials social proof.
  */
 export default function HomeTestimonials() {

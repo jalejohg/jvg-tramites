@@ -7,7 +7,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import { PROCESS_STEPS } from "@/data/content";
 
 const PROCESS_IMAGE =
-  "/images/equipo-reunion.jpg";
+  "/images/equipo-reunion.webp";
 
 function ProcessStepItem({
   step,

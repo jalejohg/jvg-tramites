@@ -9,7 +9,7 @@ import HomeCta from "@/components/home/HomeCta";
 
 export default function HomeScreen() {
   return (
-    <main>
+    <main id="contenido-principal">
       <HomeHero />
       <HomeServices />
       <HomePillars />

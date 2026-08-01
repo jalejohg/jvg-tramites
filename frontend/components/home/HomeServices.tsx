@@ -61,7 +61,13 @@ export default function HomeServices() {
           <SectionHead
             eyebrow="Servicios"
             title="Cinco soluciones, un mismo compromiso"
-            description="Desde los trámites migratorios en México hasta la apostilla, la homologación y el soporte familiar: un portafolio integral."
+            description={
+              <>
+                Trámites en <strong className="font-semibold text-ink">México</strong>
+                , apostilla, homologación y soporte familiar con un solo
+                interlocutor.
+              </>
+            }
           />
         </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -8,22 +8,26 @@ import { PROCESS_STEPS } from "@/data/content";
 import { CONTACT_FORM_HREF } from "@/lib/siteConfig";
 
 const STEP_IMAGES = [
-  "/images/asesoria.jpg",
-  "/images/documentos.jpg",
-  "/images/equipo-reunion.jpg",
-  "/images/familia.jpg",
+  "/images/asesoria.webp",
+  "/images/documentos.webp",
+  "/images/equipo-reunion.webp",
+  "/images/familia.webp",
 ] as const;
 
 export default function ProcesoScreen() {
   return (
-    <main>
+    <main id="contenido-principal">
       <PageHero
         eyebrow="Proceso"
         title="Cómo trabajamos: claridad en cada paso"
         description="Un recorrido pensado para reducir ansiedad. Usted siempre sabe en qué punto está su trámite."
         tone="warm"
-        imageSrc="/images/profesional.jpg"
+        imageSrc="/images/profesional.webp"
         imageAlt="Profesional en conversación de acompañamiento"
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Proceso" },
+        ]}
       />
 
       <section className="bg-surface py-16 md:py-24">
@@ -32,7 +36,7 @@ export default function ProcesoScreen() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden border border-border">
                 <Image
-                  src="/images/equipo-reunion.jpg"
+                  src="/images/equipo-reunion.webp"
                   alt="Equipo acompañando un caso con cercanía"
                   fill
                   className="object-cover"
@@ -88,7 +92,10 @@ export default function ProcesoScreen() {
                 key={step.step}
                 delay={Math.min(i, 4) as 0 | 1 | 2 | 3 | 4}
               >
-                <article className="group h-full overflow-hidden border border-border bg-surface transition-[border-color,box-shadow] duration-250 hover:border-gold hover:shadow-md">
+                <article
+                  id={`paso-${step.step}`}
+                  className="group h-full overflow-hidden border border-border bg-surface transition-[border-color,box-shadow] duration-250 hover:border-gold hover:shadow-md"
+                >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={STEP_IMAGES[i]}
@@ -116,7 +123,7 @@ export default function ProcesoScreen() {
       </section>
 
       <PhotoCta
-        imageSrc="/images/lago-camino.jpg"
+        imageSrc="/images/lago-camino.webp"
         title="¿Listo para el primer paso?"
         description="Estamos para escucharle. Cuéntenos su caso y le orientamos con claridad."
         secondaryHref="/servicios"

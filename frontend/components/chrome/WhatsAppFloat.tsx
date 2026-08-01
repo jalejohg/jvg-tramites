@@ -47,11 +47,13 @@ export default function WhatsAppFloat() {
     }
     document.addEventListener("keydown", onKey);
 
+    const triggerButton = triggerRef.current;
+
     return () => {
       window.clearTimeout(focusTimer);
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = previousOverflow;
-      triggerRef.current?.focus();
+      triggerButton?.focus();
     };
   }, [open]);
 

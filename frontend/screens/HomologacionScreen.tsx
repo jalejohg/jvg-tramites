@@ -7,32 +7,32 @@ import PhotoCta from "@/components/sections/PhotoCta";
 import { CONTACT_FORM_HREF } from "@/lib/siteConfig";
 
 const IMAGE =
-  "/images/graduacion.jpg";
+  "/images/graduacion.webp";
 
 const AUDIENCES = [
   {
     title: "Médicos y personal de salud",
     text: "Expedientes orientados a los requisitos de colegios y ministerios del destino.",
     image:
-      "/images/salud.jpg",
+      "/images/salud.webp",
   },
   {
     title: "Ingenieros y técnicos",
     text: "Validación de planes de estudio y documentación académica para ejercer o continuar formación.",
     image:
-      "/images/ingenieria.jpg",
+      "/images/ingenieria.webp",
   },
   {
     title: "Docentes y otras profesiones",
     text: "Acompañamiento claro para licenciados y profesionales que buscan reconocimiento formal.",
     image:
-      "/images/docencia.jpg",
+      "/images/docencia.webp",
   },
 ] as const;
 
 export default function HomologacionScreen() {
   return (
-    <main>
+    <main id="contenido-principal">
       <PageHero
         eyebrow="Servicio estrella"
         title="Homologación y validación de títulos universitarios"
@@ -40,6 +40,10 @@ export default function HomologacionScreen() {
         tone="warm"
         imageSrc={IMAGE}
         imageAlt="Profesionales preparando documentación académica"
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Homologación" },
+        ]}
       />
 
       <section className="bg-surface py-16 md:py-24">
@@ -48,7 +52,7 @@ export default function HomologacionScreen() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden border border-border">
                 <Image
-                  src="/images/estudio-expediente.jpg"
+                  src="/images/estudio-expediente.webp"
                   alt="Expediente académico en preparación"
                   fill
                   className="object-cover"
@@ -135,7 +139,7 @@ export default function HomologacionScreen() {
       </section>
 
       <PhotoCta
-        imageSrc="/images/graduacion-ceremonia.jpg"
+        imageSrc="/images/graduacion-ceremonia.webp"
         title="Dé el paso hacia ejercer su verdadera vocación"
         description="Solicite asesoría y evaluamos la viabilidad de su caso con transparencia, sin compromisos opacos."
         secondaryHref="/servicios"

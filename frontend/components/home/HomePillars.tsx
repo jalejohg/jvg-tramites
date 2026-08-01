@@ -8,8 +8,7 @@ import { PILLARS } from "@/data/content";
  * pasa por encima al hacer scroll. No es parallax JS — solo CSS sticky,
  * compatible con prefers-reduced-motion (la imagen queda fija, sin jitter).
  */
-const BAND_IMAGE =
-  "/images/atmosfera-paisaje.jpg";
+const BAND_IMAGE = "/images/atmosfera-paisaje.webp";
 
 function PillarCard({
   pillar,
@@ -74,12 +73,13 @@ export default function HomePillars() {
                 id="pillars-heading"
                 className="max-w-2xl font-serif text-[clamp(1.85rem,3.8vw,3rem)] font-medium leading-[1.15] text-ink text-balance"
               >
-                Tres pilares que transforman un trámite en tranquilidad
+                Tres pilares: gestión, respaldo legal y cobertura
               </h2>
               <p className="mt-4 max-w-xl text-base text-ink/80 md:text-lg text-pretty">
-                Gestión integral, respaldo profesional y cobertura que une
-                Cienfuegos con el mundo — sobre el mismo camino que usted
-                recorre.
+                Gestión integral, respaldo profesional y cobertura que une{" "}
+                <strong className="font-semibold text-ink">Cienfuegos</strong> con{" "}
+                <strong className="font-semibold text-ink">México</strong> y el
+                mundo — sobre el mismo camino que usted recorre.
               </p>
             </Reveal>
           </Container>

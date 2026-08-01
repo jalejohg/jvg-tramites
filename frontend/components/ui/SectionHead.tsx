@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 interface SectionHeadProps {
   eyebrow?: string;
   title: string;
-  description?: string;
+  description?: ReactNode;
   className?: string;
   align?: "left" | "center";
   children?: ReactNode;

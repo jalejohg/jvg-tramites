@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import Breadcrumbs, { type Crumb } from "@/components/ui/Breadcrumbs";
 import { cn } from "@/lib/cn";
 
 interface PageHeroProps {
@@ -13,6 +14,7 @@ interface PageHeroProps {
   imageSrc?: string;
   imageAlt?: string;
   tone?: "bg" | "warm" | "surface";
+  breadcrumbs?: Crumb[];
 }
 
 export default function PageHero({
@@ -23,6 +25,7 @@ export default function PageHero({
   imageSrc,
   imageAlt = "",
   tone = "bg",
+  breadcrumbs,
 }: PageHeroProps) {
   const toneClass =
     tone === "warm" ? "bg-warm" : tone === "surface" ? "bg-surface" : "bg-bg";
@@ -51,6 +54,9 @@ export default function PageHero({
           )}
         >
           <Reveal priority>
+            {breadcrumbs && breadcrumbs.length > 0 && (
+              <Breadcrumbs items={breadcrumbs} />
+            )}
             {eyebrow && (
               <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-deep">
                 {eyebrow}

@@ -22,7 +22,7 @@ const CHANNELS = [
     text: SITE.phoneDisplay,
     href: waLink(),
     external: true,
-    image: "/images/asesoria.jpg",
+    image: "/images/asesoria.webp",
     icon: MessageCircle,
   },
   {
@@ -30,7 +30,7 @@ const CHANNELS = [
     text: SITE.email,
     href: mailLink,
     external: false,
-    image: "/images/documentos.jpg",
+    image: "/images/documentos.webp",
     icon: Mail,
   },
   {
@@ -38,22 +38,26 @@ const CHANNELS = [
     text: SITE.address,
     href: mapsLink(),
     external: true,
-    image: "/images/ciudad-calle.jpg",
+    image: "/images/ciudad-calle.webp",
     icon: MapPin,
   },
 ] as const;
 
 export default function ContactoScreen() {
   return (
-    <main>
+    <main id="contenido-principal">
       <ScrollToHash />
       <PageHero
         eyebrow="Contacto"
         title="Solicite asesoría. Le escuchamos con atención."
         description="Complete el formulario paso a paso o escríbanos por WhatsApp. Le contactaremos — sin agenda automática, con respuesta humana."
         tone="warm"
-        imageSrc="/images/asesoria.jpg"
+        imageSrc="/images/asesoria.webp"
         imageAlt="Conversación cercana de asesoría"
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Contacto" },
+        ]}
       />
 
       <section className="bg-surface py-16 md:py-24">
@@ -62,7 +66,7 @@ export default function ContactoScreen() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden border border-border">
                 <Image
-                  src="/images/equipo-reunion.jpg"
+                  src="/images/equipo-reunion.webp"
                   alt="Atención personalizada y respuesta humana"
                   fill
                   className="object-cover"
@@ -188,7 +192,7 @@ export default function ContactoScreen() {
       </section>
 
       <PhotoCta
-        imageSrc="/images/montana.jpg"
+        imageSrc="/images/montana.webp"
         title="Estamos para simplificar su camino"
         description="Cuéntenos su caso. Le respondemos con claridad y respeto."
         secondaryHref="/servicios"

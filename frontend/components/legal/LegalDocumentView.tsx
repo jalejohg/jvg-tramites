@@ -8,11 +8,15 @@ interface LegalDocumentViewProps {
 
 export default function LegalDocumentView({ doc }: LegalDocumentViewProps) {
   return (
-    <main>
+    <main id="contenido-principal">
       <PageHero
         eyebrow="Legal"
         title={doc.title}
         description={doc.description}
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: doc.title },
+        ]}
       />
       <section className="bg-surface py-12 md:py-16">
         <Container className="max-w-3xl">

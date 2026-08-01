@@ -9,21 +9,25 @@ import { ACHIEVEMENTS, PILLARS } from "@/data/content";
 import { CONTACT_FORM_HREF, SITE } from "@/lib/siteConfig";
 
 const PILLAR_IMAGES = [
-  "/images/documentos.jpg",
-  "/images/profesional.jpg",
-  "/images/viaje-horizonte.jpg",
+  "/images/documentos.webp",
+  "/images/profesional.webp",
+  "/images/viaje-horizonte.webp",
 ] as const;
 
 export default function NosotrosScreen() {
   return (
-    <main>
+    <main id="contenido-principal">
       <PageHero
         eyebrow="Nosotros"
         title="Una firma nacida para unir derecho y movilidad humana"
         description="Profesionalismo jurídico con calidez: el puente seguro entre la burocracia y su futuro."
         tone="warm"
-        imageSrc="/images/viaje-horizonte.jpg"
+        imageSrc="/images/viaje-horizonte.webp"
         imageAlt="Horizonte de viaje y nuevas oportunidades"
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Nosotros" },
+        ]}
       />
 
       <section className="bg-surface py-16 md:py-24">
@@ -32,7 +36,7 @@ export default function NosotrosScreen() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden border border-border">
                 <Image
-                  src="/images/familia.jpg"
+                  src="/images/familia.webp"
                   alt="Familias y vínculos que cuidamos a la distancia"
                   fill
                   className="object-cover"
@@ -197,7 +201,7 @@ export default function NosotrosScreen() {
       </section>
 
       <PhotoCta
-        imageSrc="/images/atmosfera-paisaje.jpg"
+        imageSrc="/images/atmosfera-paisaje.webp"
         title="Unimos profesionalismo jurídico y calidez humana"
         description="A largo plazo aspiramos a ser referente de consultoría legal y gestión migratoria integral para la comunidad hispanohablante."
         secondaryHref="/proceso"

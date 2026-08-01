@@ -14,30 +14,34 @@ const AUDIENCES = [
   {
     title: "Quienes migran a México",
     text: "Residencias, naturalización, reunificación y regularización con asesoría legal clara.",
-    image: "/images/viaje-horizonte.jpg",
+    image: "/images/viaje-horizonte.webp",
   },
   {
     title: "Profesionales y graduados",
     text: "Homologación y validación para ejercer en el exterior con legitimidad.",
-    image: "/images/graduacion.jpg",
+    image: "/images/graduacion.webp",
   },
   {
     title: "Familias en el exterior",
     text: "Gestión a distancia desde Cienfuegos, remesas y soporte logístico.",
-    image: "/images/familia-manos.jpg",
+    image: "/images/familia-manos.webp",
   },
 ] as const;
 
 export default function ServiciosScreen() {
   return (
-    <main>
+    <main id="contenido-principal">
       <PageHero
         eyebrow="Servicios"
         title="Un portafolio integral para su camino legal y familiar"
         description="Trámites migratorios en México, documentos, homologación y soporte familiar: claridad y un solo interlocutor de confianza."
         tone="warm"
-        imageSrc="/images/documentos.jpg"
+        imageSrc="/images/documentos.webp"
         imageAlt="Documentación profesional sobre un escritorio"
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Servicios" },
+        ]}
       />
 
       <section className="bg-surface py-16 md:py-24">
@@ -46,7 +50,7 @@ export default function ServiciosScreen() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden border border-border">
                 <Image
-                  src="/images/documentacion-escritorio.jpg"
+                  src="/images/documentacion-escritorio.webp"
                   alt="Acompañamiento profesional en gestiones documentales"
                   fill
                   className="object-cover"
@@ -196,7 +200,7 @@ export default function ServiciosScreen() {
       </section>
 
       <PhotoCta
-        imageSrc="/images/hero-avion.jpg"
+        imageSrc="/images/hero-avion.webp"
         title="Los costos se cotizan según su caso"
         description="Sin sorpresas: primero claridad, después el trámite. Cuéntenos qué necesita."
         secondaryHref="/proceso"

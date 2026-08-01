@@ -4,8 +4,7 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { CONTACT_FORM_HREF, SITE } from "@/lib/siteConfig";
 
-const HERO_IMAGE =
-  "/images/hero-avion.jpg";
+const HERO_IMAGE = "/images/hero-avion.webp";
 
 export default function HomeHero() {
   return (
@@ -42,13 +41,13 @@ export default function HomeHero() {
             Su camino migratorio, con respaldo jurídico y calidez humana
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg text-pretty">
-            Especialistas en trámites migratorios hacia México, con gestión
-            documental, homologación y soporte familiar — profesionalismo y
-            cercanía, sin importar la distancia.
+            Especialistas en trámites migratorios hacia{" "}
+            <strong className="font-semibold text-ink">México</strong>, con
+            gestión documental y homologación — un solo interlocutor.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={CONTACT_FORM_HREF}>Solicitar asesoría</Button>
-            <Button href="/servicios" variant="secondary">
+            <Button href="/servicios" variant="ghost">
               Ver servicios
             </Button>
           </div>

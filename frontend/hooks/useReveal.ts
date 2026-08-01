@@ -11,13 +11,14 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
     const el = ref.current;
     if (!el) return;
 
-    if (
+    const reduced =
       typeof window !== "undefined" &&
       (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-        window.matchMedia("(max-width: 767px)").matches)
-    ) {
-      setRevealed(true);
-      return;
+        window.matchMedia("(max-width: 767px)").matches);
+
+    if (reduced) {
+      const id = requestAnimationFrame(() => setRevealed(true));
+      return () => cancelAnimationFrame(id);
     }
 
     const io = new IntersectionObserver(
