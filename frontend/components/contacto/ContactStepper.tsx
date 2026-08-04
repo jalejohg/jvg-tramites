@@ -5,10 +5,10 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import CountrySelect from "@/components/contacto/CountrySelect";
 import { SERVICES } from "@/data/content";
+import { useSubmitContact } from "@/hooks/useSubmitContact";
 import { newTabLinkProps } from "@/lib/linkBehavior";
 import { SITE } from "@/lib/siteConfig";
 import { cn } from "@/lib/cn";
-import { contactService } from "@/services/contactService";
 
 const TOTAL_STEPS = 4;
 
@@ -90,10 +90,9 @@ export default function ContactStepper() {
   const [cur, setCur] = useState(0);
   const [data, setData] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
+  const { mutateAsync, isPending, reset: resetMutation } = useSubmitContact();
 
   function setField<K extends FieldKey>(key: K, value: FormState[K]) {
     setData((prev) => ({ ...prev, [key]: value }));
@@ -122,23 +121,36 @@ export default function ContactStepper() {
     const e = validateStep(cur, data);
     setErrors(e);
     if (Object.keys(e).length) return;
-    if (data.website.trim()) return;
+    // Honeypot: bots rellenan `website`. Fingimos éxito sin llamar al API.
+    if (data.website.trim()) {
+      setStatus("success");
+      return;
+    }
 
-    setStatus("loading");
-    const result = await contactService.submit({
-      tenant_id: SITE.tenantId,
-      name: data.nombre.trim(),
-      email: data.email.trim(),
-      phone: data.telefono.trim() || undefined,
-      message: data.detalle.trim(),
-      website: data.website,
-      extra_info: [
-        { labels: { es: "País" }, value: data.pais.trim() },
-        { labels: { es: "Servicio" }, value: data.servicio },
-      ],
-    });
-
-    setStatus(result.ok ? "success" : "error");
+    setStatus("idle");
+    try {
+      await mutateAsync({
+        tenant_id: SITE.tenantId,
+        name: data.nombre.trim(),
+        email: data.email.trim(),
+        phone: data.telefono.trim() || undefined,
+        message: data.detalle.trim(),
+        website: data.website,
+        extra_info: [
+          {
+            labels: { es_MX: "País", en_US: "Country" },
+            value: data.pais.trim(),
+          },
+          {
+            labels: { es_MX: "Servicio", en_US: "Service" },
+            value: data.servicio,
+          },
+        ],
+      });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -165,6 +177,7 @@ export default function ContactStepper() {
             setData(EMPTY);
             setCur(0);
             setStatus("idle");
+            resetMutation();
           }}
         >
           Enviar otra consulta
@@ -429,8 +442,8 @@ export default function ContactStepper() {
             Continuar
           </Button>
         ) : (
-          <Button type="submit" disabled={status === "loading"}>
-            {status === "loading" ? "Enviando…" : "Enviar consulta"}
+          <Button type="submit" disabled={isPending}>
+            {isPending ? "Enviando…" : "Enviar consulta"}
           </Button>
         )}
       </div>

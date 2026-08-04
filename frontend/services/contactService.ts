@@ -1,10 +1,14 @@
 /**
- * Envío de consultas de contacto.
- * TODO: confirmar tenant_id y endpoint reales del cliente / plataforma.
+ * Envío de consultas de contacto vía Contact API de la plataforma
+ * (API Gateway + Lambda + SES en saas-core-infrastructure).
  */
 
-const CONTACT_API_URL =
+const DEFAULT_CONTACT_API_URL =
   "https://gskivxfink.execute-api.us-east-1.amazonaws.com/prod/contact";
+
+const CONTACT_API_URL =
+  process.env.NEXT_PUBLIC_CONTACT_API?.replace(/\/$/, "") ||
+  DEFAULT_CONTACT_API_URL;
 
 export interface ExtraInfoItem {
   labels: Record<string, string>;
@@ -18,6 +22,7 @@ export interface ContactPayload {
   phone?: string;
   message: string;
   extra_info?: ExtraInfoItem[];
+  /** Honeypot — debe llegar vacío; si trae valor, lo rellenó un bot. */
   website: string;
 }
 
