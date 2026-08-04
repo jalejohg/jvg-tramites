@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import ServiciosScreen from "@/screens/ServiciosScreen";
 import PageJsonLd from "@/components/seo/PageJsonLd";
 import { SERVICES } from "@/data/content";
+import { organizationAreaServed } from "@/lib/coverage";
 import { buildPageMetadata, absoluteUrl } from "@/lib/seo";
 import { SITE } from "@/lib/siteConfig";
 
 const PATH = "/servicios";
-const TITLE = "Trámites migratorios, apostilla y homologación";
+const TITLE = "Servicios de consultoría jurídica y gestión documental";
 const DESCRIPTION =
-  "Trámites migratorios en México, apostilla, homologación de títulos y gestión en Cienfuegos. Un solo interlocutor para documentos, migración y soporte familiar.";
+  "Legalización y apostilla, homologación de títulos, asesoría consular y migratoria, gestión en el terreno y soporte familiar. Un solo interlocutor de confianza.";
 
 export const metadata: Metadata = buildPageMetadata({
   title: TITLE,
@@ -32,10 +33,7 @@ export default function ServiciosPage() {
         name: service.title,
         description: service.description,
         provider: { "@id": `${absoluteUrl("/")}#organization` },
-        areaServed: [
-          { "@type": "Country", name: "México" },
-          { "@type": "City", name: "Cienfuegos" },
-        ],
+        areaServed: organizationAreaServed(),
         url: absoluteUrl(service.href ?? PATH),
         image: absoluteUrl(service.image),
       },
