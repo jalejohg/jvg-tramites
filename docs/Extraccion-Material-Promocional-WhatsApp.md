@@ -24,7 +24,7 @@ Documento de referencia para copy, servicios, contacto y tono de marca de **Trá
 | Canal | Dato |
 | --- | --- |
 | Teléfono / WhatsApp | `+52 495 106 9969` (formato más frecuente). En un flyer aparece como `+52 49 5106 9969` (mismo número, tipografía distinta). |
-| Correo | `josuevevagomez88@gmail.com` |
+| Correo | `josuevegagomez88@gmail.com` |
 | Ubicación citada | Ave Polanco, AGENCY GLOBAL PASS |
 | Atención presencial | CDMX |
 | Atención virtual | Otros estados de la República Mexicana |
@@ -52,6 +52,20 @@ En el flyer de perfil aparece una firma manuscrita que se lee como **“Juan Val
 ---
 
 ## 4. Catálogo unificado de servicios
+
+### Catálogo oficial del sitio (cuestionario de descubrimiento)
+
+Estos son los **cinco servicios** que deben figurar en la web (nombres y descripciones canónicas en `docs/Cuestionario-de-Descubrimiento-del-Proyecto.md` y `frontend/data/knowledge-base.json`):
+
+1. Legalización y apostilla de documentos civiles y académicos
+2. Homologación y validación de títulos universitarios
+3. Asesoría consular y acompañamiento en procesos migratorios
+4. Gestión territorial de trámites en el terreno
+5. Soporte logístico familiar: remesas seguras y telecomunicaciones
+
+Las sublistas siguientes documentan el **material promocional histórico** de flyers/WhatsApp (catálogo amplio México/INM). No sustituyen el portafolio oficial del sitio.
+
+### Material histórico (flyers)
 
 Lista deduplicada a partir de todos los flyers.
 
@@ -238,7 +252,7 @@ Lista deduplicada a partir de todos los flyers.
 - Asesoría personalizada por: Lic. JOSUE VEGA GÓMEZ — ABOGADO ESPECIALISTA EN MIGRACIÓN
 - Contacto:
   - WhatsApp: +52 495 106 9969
-  - Email: josuevevagomez88@gmail.com
+  - Email: josuevegagomez88@gmail.com
   - Ubicación: Ave Polanco, AGENCY GLOBAL PASS
 
 ---
