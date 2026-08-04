@@ -4,6 +4,7 @@ import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import SkipLink from "@/components/chrome/SkipLink";
 import WhatsAppFloat from "@/components/chrome/WhatsAppFloat";
+import QueryProvider from "@/components/providers/QueryProvider";
 import JsonLd from "@/components/seo/JsonLd";
 import WebVitals from "@/components/seo/WebVitals";
 import Analytics from "@/components/seo/Analytics";
@@ -78,14 +79,16 @@ export default function RootLayout({
       className={`${cormorant.variable} ${sourceSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg font-sans text-ink">
-        <SkipLink />
-        <JsonLd />
-        <Analytics />
-        <WebVitals />
-        <SiteHeader />
-        <div className="flex-1">{children}</div>
-        <SiteFooter />
-        <WhatsAppFloat />
+        <QueryProvider>
+          <SkipLink />
+          <JsonLd />
+          <Analytics />
+          <WebVitals />
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+          <WhatsAppFloat />
+        </QueryProvider>
       </body>
     </html>
   );
