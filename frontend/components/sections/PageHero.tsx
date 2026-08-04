@@ -3,6 +3,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Breadcrumbs, { type Crumb } from "@/components/ui/Breadcrumbs";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import { cn } from "@/lib/cn";
 
 interface PageHeroProps {
@@ -13,7 +14,7 @@ interface PageHeroProps {
   /** Imagen opcional a la derecha (interior pages). */
   imageSrc?: string;
   imageAlt?: string;
-  tone?: "bg" | "warm" | "surface";
+  tone?: "bg" | "warm" | "beige" | "surface";
   breadcrumbs?: Crumb[];
 }
 
@@ -24,11 +25,12 @@ export default function PageHero({
   children,
   imageSrc,
   imageAlt = "",
-  tone = "bg",
+  tone: _tone = "bg",
   breadcrumbs,
 }: PageHeroProps) {
-  const toneClass =
-    tone === "warm" ? "bg-warm" : tone === "surface" ? "bg-surface" : "bg-bg";
+  // Canvas predominante blanco: todos los tones de sección resuelven a bg.
+  void _tone;
+  const toneClass = "bg-bg";
 
   return (
     <section
@@ -37,14 +39,7 @@ export default function PageHero({
         toneClass
       )}
     >
-      <div
-        className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-gold/12 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-gold-soft/30 blur-3xl"
-        aria-hidden
-      />
+      <SectionAtmosphere />
 
       <Container className="relative">
         <div
@@ -75,7 +70,7 @@ export default function PageHero({
 
           {imageSrc && (
             <Reveal priority delay={1} className="relative hidden lg:block">
-              <div className="relative aspect-[5/4] overflow-hidden border border-border">
+              <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-border-subtle shadow-sm">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}

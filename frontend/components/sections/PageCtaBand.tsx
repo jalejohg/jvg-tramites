@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import { cn } from "@/lib/cn";
 import { CONTACT_FORM_HREF } from "@/lib/siteConfig";
 
@@ -12,7 +13,7 @@ interface PageCtaBandProps {
   secondaryHref?: string;
   secondaryLabel?: string;
   className?: string;
-  tone?: "surface" | "warm" | "gold";
+  tone?: "surface" | "warm" | "beige" | "gold";
 }
 
 /** CTA reutilizable para páginas interiores (evita bandas monótonas). */
@@ -24,29 +25,25 @@ export default function PageCtaBand({
   secondaryHref,
   secondaryLabel,
   className,
-  tone = "warm",
+  tone = "surface",
 }: PageCtaBandProps) {
   const shell =
     tone === "gold"
-      ? "border-gold/40 bg-gradient-to-br from-gold-soft/50 via-surface to-warm"
-      : tone === "warm"
-        ? "border-border bg-warm"
-        : "border-border bg-surface";
+      ? "border-gold/40 bg-bg"
+      : "border-border-subtle bg-bg";
 
   return (
-    <section className={cn("py-16 md:py-20", className)}>
-      <Container>
+    <section className={cn("relative overflow-hidden py-16 md:py-20", className)}>
+      <SectionAtmosphere mirror />
+      <Container className="relative">
         <Reveal>
           <div
             className={cn(
-              "relative overflow-hidden border px-8 py-12 text-center md:px-14 md:py-14",
+              "relative overflow-hidden rounded-2xl border px-8 py-12 text-center shadow-sm md:px-14 md:py-14",
               shell
             )}
           >
-            <div
-              className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/20 blur-3xl"
-              aria-hidden
-            />
+            <SectionAtmosphere className="opacity-90" />
             <h2 className="relative mx-auto max-w-2xl font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-medium text-ink text-balance">
               {title}
             </h2>

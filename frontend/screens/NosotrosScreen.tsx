@@ -3,8 +3,8 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import PageHero from "@/components/sections/PageHero";
-import PageCtaBand from "@/components/sections/PageCtaBand";
 import PhotoCta from "@/components/sections/PhotoCta";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import { ACHIEVEMENTS, PILLARS } from "@/data/content";
 import { CONTACT_FORM_HREF, SITE } from "@/lib/siteConfig";
 
@@ -30,11 +30,12 @@ export default function NosotrosScreen() {
         ]}
       />
 
-      <section className="bg-surface py-16 md:py-24">
-        <Container>
+      <section className="relative overflow-hidden bg-surface py-16 md:py-24">
+        <SectionAtmosphere />
+        <Container className="relative">
           <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
             <Reveal>
-              <div className="relative aspect-[4/3] overflow-hidden border border-border">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border-subtle shadow-sm">
                 <Image
                   src="/images/familia.webp"
                   alt="Familias y vínculos que cuidamos a la distancia"
@@ -64,13 +65,14 @@ export default function NosotrosScreen() {
               <p className="mt-4 text-muted text-pretty leading-relaxed">
                 El proyecto se gestó entre finales de 2025 y se consolidó en la
                 primera mitad de 2026, con especialidad en trámites migratorios
-                hacia México, redes operativas en Cienfuegos y un ecosistema que
-                incluye también soluciones logísticas familiares.
+                hacia México, sede en Ciudad de México, atención en las
+                principales ciudades de Cuba y un ecosistema que incluye también
+                soluciones logísticas familiares.
               </p>
               <ul className="mt-6 space-y-2 text-sm text-ink">
                 {[
                   "Excelencia y cercanía como identidad",
-                  "Especialidad migratoria en México + operación en Cienfuegos",
+                  "Firma mexicana con sede en CDMX y cobertura en Cuba",
                   "Más allá de la asesoría jurídica tradicional",
                 ].map((item) => (
                   <li key={item} className="border-l-2 border-gold pl-3">
@@ -83,8 +85,9 @@ export default function NosotrosScreen() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-warm/40 py-14 md:py-16">
-        <Container>
+      <section className="relative overflow-hidden border-y border-border-subtle bg-bg py-14 md:py-16">
+        <SectionAtmosphere mirror />
+        <Container className="relative">
           <Reveal>
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-deep">
               Nuestros logros
@@ -108,8 +111,9 @@ export default function NosotrosScreen() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-bg py-16 md:py-24">
-        <Container>
+      <section className="relative overflow-hidden border-y border-border-subtle bg-bg py-16 md:py-24">
+        <SectionAtmosphere />
+        <Container className="relative">
           <Reveal>
             <h2 className="font-serif text-2xl font-medium text-ink md:text-3xl">
               Lo que nos sostiene
@@ -125,7 +129,7 @@ export default function NosotrosScreen() {
                 key={pillar.title}
                 delay={Math.min(i, 4) as 0 | 1 | 2 | 3 | 4}
               >
-                <article className="group h-full overflow-hidden border border-border bg-surface transition-[border-color,box-shadow] duration-250 hover:border-gold hover:shadow-md">
+                <article className="group h-full overflow-hidden rounded-xl border border-border-subtle bg-surface shadow-sm transition-[border-color,box-shadow] duration-250 hover:border-gold hover:shadow-md">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={PILLAR_IMAGES[i]}
@@ -154,11 +158,12 @@ export default function NosotrosScreen() {
         </Container>
       </section>
 
-      <section className="bg-surface py-16 md:py-24">
-        <Container>
+      <section className="relative overflow-hidden bg-surface py-16 md:py-24">
+        <SectionAtmosphere />
+        <Container className="relative">
           <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
             <Reveal>
-              <div className="relative mx-auto aspect-square max-w-md overflow-hidden border border-border bg-ink md:mx-0">
+              <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-2xl border border-border-subtle bg-ink shadow-md md:mx-0">
                 <Image
                   src={SITE.directorImage}
                   alt={`${SITE.director}, ${SITE.directorRole}`}
@@ -189,8 +194,8 @@ export default function NosotrosScreen() {
               </p>
               <p className="mt-4 text-muted leading-relaxed text-pretty">
                 Bajo su dirección, JVG también sostiene gestión documental,
-                homologación profesional y presencia operativa en Cienfuegos
-                para la diáspora.
+                homologación profesional y atención en las principales ciudades
+                del país para la diáspora.
               </p>
               <div className="mt-8">
                 <Button href={CONTACT_FORM_HREF}>Solicitar asesoría</Button>
@@ -206,16 +211,6 @@ export default function NosotrosScreen() {
         description="A largo plazo aspiramos a ser referente de consultoría legal y gestión migratoria integral para la comunidad hispanohablante."
         secondaryHref="/proceso"
         secondaryLabel="Conocer el proceso"
-      />
-
-      <PageCtaBand
-        tone="surface"
-        title="Conozca también nuestro portafolio"
-        description={SITE.slogan}
-        primaryHref="/servicios"
-        primaryLabel="Ver servicios"
-        secondaryHref={CONTACT_FORM_HREF}
-        secondaryLabel="Solicitar asesoría"
       />
     </main>
   );

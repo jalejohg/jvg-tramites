@@ -7,7 +7,7 @@ import { CONTACT_FORM_HREF, SITE } from "@/lib/siteConfig";
 
 const SHORTCUTS = [
   { href: "/servicios", label: "Servicios" },
-  { href: "/homologacion", label: "Homologación" },
+  { href: "/servicios/homologacion", label: "Homologación" },
   { href: "/proceso", label: "Proceso" },
   { href: "/contacto", label: "Contacto" },
 ] as const;

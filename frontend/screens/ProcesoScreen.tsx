@@ -2,10 +2,9 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import PageHero from "@/components/sections/PageHero";
-import PageCtaBand from "@/components/sections/PageCtaBand";
 import PhotoCta from "@/components/sections/PhotoCta";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import { PROCESS_STEPS } from "@/data/content";
-import { CONTACT_FORM_HREF } from "@/lib/siteConfig";
 
 const STEP_IMAGES = [
   "/images/asesoria.webp",
@@ -30,11 +29,12 @@ export default function ProcesoScreen() {
         ]}
       />
 
-      <section className="bg-surface py-16 md:py-24">
-        <Container>
+      <section className="relative overflow-hidden bg-surface py-16 md:py-24">
+        <SectionAtmosphere />
+        <Container className="relative">
           <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
             <Reveal>
-              <div className="relative aspect-[4/3] overflow-hidden border border-border">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border-subtle shadow-sm">
                 <Image
                   src="/images/equipo-reunion.webp"
                   alt="Equipo acompañando un caso con cercanía"
@@ -76,8 +76,9 @@ export default function ProcesoScreen() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-bg py-16 md:py-24">
-        <Container>
+      <section className="relative overflow-hidden border-y border-border-subtle bg-bg py-16 md:py-24">
+        <SectionAtmosphere mirror />
+        <Container className="relative">
           <Reveal>
             <h2 className="font-serif text-2xl font-medium text-ink md:text-3xl">
               Los cuatro pasos
@@ -94,7 +95,7 @@ export default function ProcesoScreen() {
               >
                 <article
                   id={`paso-${step.step}`}
-                  className="group h-full overflow-hidden border border-border bg-surface transition-[border-color,box-shadow] duration-250 hover:border-gold hover:shadow-md"
+                  className="group h-full overflow-hidden rounded-xl border border-border-subtle bg-surface shadow-sm transition-[border-color,box-shadow] duration-250 hover:border-gold hover:shadow-md"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -105,7 +106,7 @@ export default function ProcesoScreen() {
                       sizes="(max-width: 640px) 100vw, 50vw"
                       aria-hidden
                     />
-                    <span className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center bg-gold font-serif text-base text-ink">
+                    <span className="gold-orb absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full font-serif text-base">
                       {step.step}
                     </span>
                   </div>
@@ -128,16 +129,6 @@ export default function ProcesoScreen() {
         description="Estamos para escucharle. Cuéntenos su caso y le orientamos con claridad."
         secondaryHref="/servicios"
         secondaryLabel="Ver servicios"
-      />
-
-      <PageCtaBand
-        tone="surface"
-        title="También puede revisar nuestros servicios"
-        description="Cinco soluciones integrales, un mismo compromiso."
-        primaryHref="/servicios"
-        primaryLabel="Ver servicios"
-        secondaryHref={CONTACT_FORM_HREF}
-        secondaryLabel="Solicitar asesoría"
       />
     </main>
   );

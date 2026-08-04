@@ -7,7 +7,7 @@ import { SITE } from "@/lib/siteConfig";
 const PATH = "/nosotros";
 const TITLE = "Nosotros · Lic. Josue Vega Gómez";
 const DESCRIPTION =
-  "Conozca Trámites Migratorios JVG: firma jurídica con especialidad migratoria en México, gestión en Cienfuegos y dirección del Lic. Josue Vega Gómez.";
+  "Conozca Trámites Migratorios JVG: firma jurídica mexicana con sede en Ciudad de México, atención en las principales ciudades de Cuba y dirección del Lic. Josue Vega Gómez.";
 
 export const metadata: Metadata = buildPageMetadata({
   title: TITLE,
@@ -25,10 +25,11 @@ export default function NosotrosPage() {
     worksFor: { "@id": `${absoluteUrl("/")}#organization` },
     url: absoluteUrl(PATH),
     knowsAbout: [
-      "Trámites migratorios",
-      "Homologación de títulos",
-      "Apostilla y legalización",
-      "Derecho migratorio México",
+      "Legalización y apostilla de documentos",
+      "Homologación y validación de títulos universitarios",
+      "Asesoría consular y procesos migratorios",
+      "Gestión territorial de trámites",
+      "Soporte logístico familiar",
     ],
   };
 
