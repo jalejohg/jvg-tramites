@@ -29,16 +29,51 @@ export interface KnowledgeSite {
   phoneDisplay: string;
   email: string;
   address: string;
-  mapCoords: { lat: number; lng: number };
   facebookProfile: string;
   facebookGroup: string;
   locationLabel: string;
+  locationSummary: string;
+  mexicoCoverage: KnowledgeMexicoCoverageArea[];
+  cubaProvinces: string[];
   defaultSiteUrl: string;
+}
+
+/** Área de cobertura en México. `localities` es datos internos/SEO, no se listan en UI. */
+export interface KnowledgeMexicoCoverageArea {
+  name: string;
+  localities?: string[];
 }
 
 export interface KnowledgeNavLink {
   href: string;
   label: string;
+}
+
+export interface KnowledgeServiceAudience {
+  title: string;
+  text: string;
+  image: string;
+}
+
+/** Contenido de la página de detalle `/servicios/[slug]`. */
+export interface KnowledgeServiceDetail {
+  eyebrow: string;
+  heroDescription: string;
+  breadcrumbLabel: string;
+  introEyebrow: string;
+  introTitle: string;
+  introParagraphs: string[];
+  introPoints: string[];
+  introImage: string;
+  introImageAlt: string;
+  audiencesTitle: string;
+  audiencesDescription: string;
+  audiences: KnowledgeServiceAudience[];
+  photoCtaImage: string;
+  photoCtaTitle: string;
+  photoCtaDescription: string;
+  seoTitle: string;
+  seoDescription: string;
 }
 
 export interface KnowledgeService {
@@ -47,10 +82,11 @@ export interface KnowledgeService {
   description: string;
   value: string;
   icon: ServiceIconName;
-  href?: string;
+  /** Ruta canónica del detalle, p. ej. `/servicios/legalizacion`. */
+  href: string;
   image: string;
   imageAlt: string;
-  highlights?: string[];
+  detail: KnowledgeServiceDetail;
 }
 
 export interface KnowledgePillar {

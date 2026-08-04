@@ -30,10 +30,12 @@ export const SITE = {
   phoneDisplay: site.phoneDisplay,
   email: site.email,
   address: site.address,
-  mapCoords: site.mapCoords,
   facebookProfile: site.facebookProfile,
   facebookGroup: site.facebookGroup,
   locationLabel: site.locationLabel,
+  locationSummary: site.locationSummary,
+  mexicoCoverage: site.mexicoCoverage,
+  cubaProvinces: site.cubaProvinces,
 } as const;
 
 /** Mensaje precargado al abrir el chat de WhatsApp desde el sitio. */
@@ -49,16 +51,6 @@ export const mailLink = `mailto:${SITE.email}`;
 /** Ancla del formulario en /contacto — usar en CTAs de «Solicitar asesoría». */
 export const CONTACT_FORM_ID = contactFormId;
 export const CONTACT_FORM_HREF = `/contacto#${CONTACT_FORM_ID}`;
-
-export function mapsEmbedUrl(): string {
-  const { lat, lng } = SITE.mapCoords;
-  return `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
-}
-
-export function mapsLink(): string {
-  const { lat, lng } = SITE.mapCoords;
-  return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
-}
 
 /** Metadata canónica compartida por páginas. */
 export function pageCanonical(path: string): { canonical: string } {

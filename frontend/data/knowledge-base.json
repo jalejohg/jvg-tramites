@@ -7,7 +7,7 @@
     "slogan": "Tu camino, nuestro compromiso.",
     "taglineMexico": "Asesoría migratoria especializada para su proyecto en México.",
     "titleDefault": "Trámites migratorios México · Consultoría jurídica JVG",
-    "description": "Consultoría jurídica y trámites migratorios a México: residencias, apostilla, homologación y soporte familiar. Gestión en Cienfuegos y atención en CDMX.",
+    "description": "Consultoría jurídica y trámites migratorios a México: residencias, apostilla, homologación y soporte familiar. Firma mexicana con sede en Ciudad de México y atención en las principales ciudades de Cuba.",
     "keywords": [
       "trámites migratorios",
       "consultoría jurídica",
@@ -15,7 +15,24 @@
       "apostilla",
       "legalización de documentos",
       "homologación de títulos",
+      "Ciudad de México",
+      "Cuba",
+      "Pinar del Río",
+      "Artemisa",
+      "La Habana",
+      "Mayabeque",
+      "Matanzas",
       "Cienfuegos",
+      "Villa Clara",
+      "Sancti Spíritus",
+      "Ciego de Ávila",
+      "Camagüey",
+      "Las Tunas",
+      "Holguín",
+      "Granma",
+      "Santiago de Cuba",
+      "Guantánamo",
+      "Isla de la Juventud",
       "JVG"
     ],
     "director": "Josue Vega Gómez",
@@ -25,92 +42,351 @@
     "tenantId": "jvg",
     "waNumber": "524951069969",
     "phoneDisplay": "+52 495 106 9969",
-    "email": "josuevevagomez88@gmail.com",
-    "address": "Ave Polanco, AGENCY GLOBAL PASS, Ciudad de México",
-    "mapCoords": { "lat": 19.4338, "lng": -99.1947 },
+    "email": "josuevegagomez88@gmail.com",
+    "address": "Ciudad de México, México",
     "facebookProfile": "",
     "facebookGroup": "https://www.facebook.com/groups/941897664039041/",
-    "locationLabel": "CDMX presencial · Virtual en México · Gestión en Cienfuegos",
+    "locationLabel": "Sede en Ciudad de México y Estado de México · Atención en las principales ciudades de Cuba",
+    "locationSummary": "Somos una firma mexicana, con sede en Ciudad de México y cobertura en Estado de México. En Cuba, ofrecemos servicios en las principales ciudades del país, coordinando cada caso con cercanía y claridad.",
+    "mexicoCoverage": [
+      {
+        "name": "Ciudad de México"
+      },
+      {
+        "name": "Estado de México",
+        "localities": [
+          "Toluca",
+          "Tecámac"
+        ]
+      }
+    ],
+    "cubaProvinces": [
+      "Pinar del Río",
+      "Artemisa",
+      "La Habana",
+      "Mayabeque",
+      "Matanzas",
+      "Cienfuegos",
+      "Villa Clara",
+      "Sancti Spíritus",
+      "Ciego de Ávila",
+      "Camagüey",
+      "Las Tunas",
+      "Holguín",
+      "Granma",
+      "Santiago de Cuba",
+      "Guantánamo",
+      "Isla de la Juventud"
+    ],
     "defaultSiteUrl": "https://tramitesmigratoriosjvg.com"
   },
   "waDefaultMessage": "Hola, vengo del sitio web de Trámites Migratorios JVG y me gustaría solicitar asesoría.",
   "contactFormId": "formulario",
   "nav": [
-    { "href": "/", "label": "Inicio" },
-    { "href": "/servicios", "label": "Servicios" },
-    { "href": "/homologacion", "label": "Homologación" },
-    { "href": "/nosotros", "label": "Nosotros" },
-    { "href": "/proceso", "label": "Proceso" },
-    { "href": "/contacto", "label": "Contacto" }
+    {
+      "href": "/",
+      "label": "Inicio"
+    },
+    {
+      "href": "/servicios",
+      "label": "Servicios"
+    },
+    {
+      "href": "/nosotros",
+      "label": "Nosotros"
+    },
+    {
+      "href": "/proceso",
+      "label": "Proceso"
+    },
+    {
+      "href": "/contacto",
+      "label": "Contacto"
+    }
   ],
   "services": [
     {
-      "id": "migratorio-mx",
-      "title": "Trámites migratorios en México",
-      "description": "Acompañamiento jurídico en procesos migratorios hacia y dentro de México: residencias, naturalización, reunificación, regularización y asesoría a inversionistas y empresas.",
-      "value": "Claridad sobre su caso, menor riesgo de denegación y un interlocutor legal de confianza en cada etapa.",
-      "icon": "Landmark",
-      "image": "/images/viaje-horizonte.webp",
-      "imageAlt": "Viaje internacional y horizonte abierto",
-      "highlights": [
-        "Visas de residencia temporales y permanentes",
-        "Naturalización y ciudadanía",
-        "Canjes de residencia y visas de trabajo",
-        "Reunificación familiar",
-        "Regularización y defensa",
-        "Asesoría para inversionistas y empresarial"
-      ]
-    },
-    {
       "id": "legalizacion",
-      "title": "Legalización y apostilla",
-      "description": "Gestión, obtención y tramitación del reconocimiento oficial de documentos civiles y académicos ante ministerios, MINREX y consulados: nacimientos, matrimonios, antecedentes penales, títulos y más.",
-      "value": "Sus documentos quedan con validez internacional, sin filas ni errores de forma.",
+      "title": "Legalización y apostilla de documentos civiles y académicos",
+      "description": "Legalización y apostilla de actas, fe de vida, antecedentes y títulos ante ministerios, MINREX y consulados.",
+      "value": "Tranquilidad y validez internacional: sus documentos quedan listos para presentarse ante cualquier autoridad extranjera, sin filas, errores de forma ni burocracia pesada.",
       "icon": "FileCheck",
+      "href": "/servicios/legalizacion",
       "image": "/images/documentos.webp",
-      "imageAlt": "Documentos oficiales sobre un escritorio"
+      "imageAlt": "Documentos oficiales sobre un escritorio",
+      "detail": {
+        "eyebrow": "Servicio",
+        "heroDescription": "Documentos civiles y académicos listos para presentarse ante autoridades extranjeras, sin filas ni errores de forma.",
+        "breadcrumbLabel": "Legalización y apostilla",
+        "introEyebrow": "El servicio",
+        "introTitle": "¿En qué consiste?",
+        "introParagraphs": [
+          "Gestionamos la obtención y el reconocimiento oficial de documentos esenciales ante los ministerios correspondientes, el Ministerio de Relaciones Exteriores y embajadas o consulados.",
+          "Trabajamos con certificaciones de nacimiento, matrimonios, fe de vida, antecedentes penales y títulos educativos, para que sus papeles queden listos ante cualquier autoridad extranjera — con criterio técnico y sin burocracia innecesaria."
+        ],
+        "introPoints": [
+          "Legalización y apostilla según el país de destino",
+          "Coordinación ante ministerios, MINREX y consulados",
+          "Documentos civiles: nacimiento, matrimonio, fe de vida y antecedentes",
+          "Títulos y certificados académicos",
+          "Expediente listo para autoridades extranjeras"
+        ],
+        "introImage": "/images/documentacion-escritorio.webp",
+        "introImageAlt": "Documentación profesional en preparación",
+        "audiencesTitle": "¿Para quién es?",
+        "audiencesDescription": "Perfiles que más nos consultan — cada caso se evalúa con honestidad sobre su viabilidad real.",
+        "audiences": [
+          {
+            "title": "Familias con trámites internacionales",
+            "text": "Actas, fe de vida y documentos civiles listos para residencias, citas o gestiones en el exterior.",
+            "image": "/images/familia.webp"
+          },
+          {
+            "title": "Profesionales y estudiantes",
+            "text": "Títulos, notas y certificaciones académicas con validez ante instituciones extranjeras.",
+            "image": "/images/estudio-expediente.webp"
+          },
+          {
+            "title": "Procesos migratorios y consulares",
+            "text": "Expedientes documentales alineados a lo que realmente pide la autoridad del destino.",
+            "image": "/images/viaje-horizonte.webp"
+          }
+        ],
+        "photoCtaImage": "/images/documentos.webp",
+        "photoCtaTitle": "Sus documentos, listos para el mundo",
+        "photoCtaDescription": "Solicite asesoría y le explicamos con claridad qué necesita, plazos estimados y el camino más seguro.",
+        "seoTitle": "Legalización y apostilla de documentos civiles y académicos",
+        "seoDescription": "Legalización y apostilla de actas, fe de vida, antecedentes penales y títulos. Gestión ante ministerios, MINREX y consulados con acompañamiento claro."
+      }
     },
     {
       "id": "homologacion",
-      "title": "Homologación de títulos",
-      "description": "Asesoría técnica y armado del expediente completo (título, notas, planes de estudio) para homologar o validar estudios superiores en el país de destino.",
-      "value": "Acelera su inserción laboral profesional en el exterior y reduce el riesgo de rechazo de expediente.",
+      "title": "Homologación y validación de títulos universitarios",
+      "description": "Asesoría técnica y armado del expediente para homologar o validar títulos universitarios en el país de destino.",
+      "value": "Superación y éxito profesional: acelera su inserción laboral en el exterior y reduce el riesgo de rechazo del expediente por mala estructuración.",
       "icon": "GraduationCap",
-      "href": "/homologacion",
+      "href": "/servicios/homologacion",
       "image": "/images/graduacion.webp",
-      "imageAlt": "Graduación y trayectoria académica profesional"
+      "imageAlt": "Graduación y trayectoria académica profesional",
+      "detail": {
+        "eyebrow": "Servicio estrella",
+        "heroDescription": "Para médicos, ingenieros, docentes y profesionales que desean ejercer con legitimidad en el exterior.",
+        "breadcrumbLabel": "Homologación",
+        "introEyebrow": "El servicio",
+        "introTitle": "¿En qué consiste?",
+        "introParagraphs": [
+          "Asesoría técnica y armado del expediente completo — título, certificación de notas y planes de estudio — para que profesionales de diversas áreas puedan homologar, validar o revalidar sus estudios superiores en el país de destino (España, EE. UU., México u otros).",
+          "Le ahorramos rechazos por mala estructuración y aceleramos su inserción en el mercado laboral internacional, devolviéndole el valor de sus años de estudio."
+        ],
+        "introPoints": [
+          "Armado del expediente: título, notas y planes de estudio",
+          "Orientación según el país de destino",
+          "Acompañamiento a médicos, ingenieros, docentes y otros profesionales",
+          "Reducción del riesgo de rechazo por mala estructuración",
+          "Seguimiento claro hasta la resolución"
+        ],
+        "introImage": "/images/estudio-expediente.webp",
+        "introImageAlt": "Expediente académico en preparación",
+        "audiencesTitle": "¿Para quién es?",
+        "audiencesDescription": "Perfiles profesionales que más nos consultan — cada caso se evalúa con honestidad sobre su viabilidad real.",
+        "audiences": [
+          {
+            "title": "Médicos y personal de salud",
+            "text": "Expedientes orientados a los requisitos de colegios y ministerios del destino.",
+            "image": "/images/salud.webp"
+          },
+          {
+            "title": "Ingenieros y técnicos",
+            "text": "Validación de planes de estudio y documentación académica para ejercer o continuar formación.",
+            "image": "/images/ingenieria.webp"
+          },
+          {
+            "title": "Docentes y otras profesiones",
+            "text": "Acompañamiento claro para licenciados y profesionales que buscan reconocimiento formal.",
+            "image": "/images/docencia.webp"
+          }
+        ],
+        "photoCtaImage": "/images/graduacion-ceremonia.webp",
+        "photoCtaTitle": "Dé el paso hacia ejercer su verdadera vocación",
+        "photoCtaDescription": "Solicite asesoría y evaluamos la viabilidad de su caso con transparencia, sin compromisos opacos.",
+        "seoTitle": "Homologación y validación de títulos universitarios",
+        "seoDescription": "Asesoría técnica y armado del expediente para homologar, validar o revalidar títulos universitarios en el exterior. Acelere su inserción profesional con acompañamiento claro."
+      }
+    },
+    {
+      "id": "consular-migratorio",
+      "title": "Asesoría consular y acompañamiento en procesos migratorios",
+      "description": "Consultoría para visados, reunificación familiar y preparación de entrevistas consulares, con análisis de viabilidad.",
+      "value": "Certeza y reducción de riesgos: claridad sobre sus opciones reales y menor probabilidad de denegación por errores de forma o falta de documentación obligatoria.",
+      "icon": "Landmark",
+      "href": "/servicios/consular-migratorio",
+      "image": "/images/viaje-horizonte.webp",
+      "imageAlt": "Viaje internacional y horizonte abierto",
+      "detail": {
+        "eyebrow": "Servicio",
+        "heroDescription": "Visados, reunificación familiar y preparación consular con análisis honesto de viabilidad según la normativa del destino.",
+        "breadcrumbLabel": "Asesoría consular y migratoria",
+        "introEyebrow": "El servicio",
+        "introTitle": "¿En qué consiste?",
+        "introParagraphs": [
+          "Consultoría integral para la solicitud de diferentes tipos de visados, procesos de reunificación familiar y preparación para entrevistas consulares.",
+          "Analizamos la viabilidad de cada caso según la normativa jurídica vigente del país de destino, para que avance con claridad y menor riesgo de denegación por errores de forma o falta de documentación obligatoria."
+        ],
+        "introPoints": [
+          "Visados y procesos migratorios con criterio legal",
+          "Reunificación familiar y armado de expediente",
+          "Preparación para entrevistas consulares",
+          "Análisis de viabilidad del caso",
+          "Orientación según la normativa del país de destino"
+        ],
+        "introImage": "/images/asesoria.webp",
+        "introImageAlt": "Asesoría profesional en procesos migratorios",
+        "audiencesTitle": "¿Para quién es?",
+        "audiencesDescription": "Quienes necesitan certeza antes de invertir tiempo y recursos en un expediente migratorio.",
+        "audiences": [
+          {
+            "title": "Solicitantes de visado",
+            "text": "Orientación clara sobre requisitos, plazos y documentación obligatoria del destino.",
+            "image": "/images/viaje-horizonte.webp"
+          },
+          {
+            "title": "Reunificación familiar",
+            "text": "Acompañamiento para unir a su familia con un plan documental sólido y realista.",
+            "image": "/images/familia.webp"
+          },
+          {
+            "title": "Entrevistas consulares",
+            "text": "Preparación práctica para presentarse con orden, coherencia y confianza.",
+            "image": "/images/profesional.webp"
+          }
+        ],
+        "photoCtaImage": "/images/cta-viaje.webp",
+        "photoCtaTitle": "Avance con certeza, no con suposiciones",
+        "photoCtaDescription": "Cuéntenos su caso y le diremos con transparencia qué es viable y qué conviene hacer primero.",
+        "seoTitle": "Asesoría consular y acompañamiento en procesos migratorios",
+        "seoDescription": "Consultoría para visados, reunificación familiar y entrevistas consulares. Análisis de viabilidad según la normativa del país de destino."
+      }
     },
     {
       "id": "territorial",
-      "title": "Gestión territorial en el terreno",
-      "description": "Equipo operativo en regiones clave como Cienfuegos: búsqueda y procesamiento de certificaciones en registros, notarías y archivos locales.",
-      "value": "«Ojos y manos» en el terreno para quien ya está en el exterior u otra provincia.",
+      "title": "Gestión territorial de trámites en el terreno",
+      "description": "Gestión presencial de certificaciones en registros, notarías y archivos locales en las principales ciudades de Cuba.",
+      "value": "Inmediatez y eliminación de distancias: «ojos y manos» en el terreno para quien ya está en el exterior o en otra provincia, sin intermediarios informales.",
       "icon": "MapPin",
+      "href": "/servicios/territorial",
       "image": "/images/ciudad-calle.webp",
-      "imageAlt": "Calle soleada de ciudad caribeña"
+      "imageAlt": "Calle soleada de ciudad caribeña",
+      "detail": {
+        "eyebrow": "Servicio",
+        "heroDescription": "Ojos y manos en el terreno — gestiones físicas en registros, notarías y archivos locales en las principales ciudades de Cuba.",
+        "breadcrumbLabel": "Gestión territorial",
+        "introEyebrow": "El servicio",
+        "introTitle": "¿En qué consiste?",
+        "introParagraphs": [
+          "A través de un equipo operativo y gestores especializados en las principales ciudades del país, realizamos la búsqueda, solicitud física y procesamiento de certificaciones directamente en los registros civiles, notarías y archivos locales correspondientes.",
+          "Ideal si ya está en el exterior o en otra provincia y necesita avanzar sin depender de intermediarios informales ni viajes improvisados."
+        ],
+        "introPoints": [
+          "Búsqueda y solicitud física de certificaciones",
+          "Gestión presencial en registros civiles y notarías",
+          "Procesamiento en archivos locales",
+          "Cobertura en las principales ciudades de Cuba",
+          "Seguimiento claro aunque usted esté a distancia"
+        ],
+        "introImage": "/images/oficina.webp",
+        "introImageAlt": "Gestión documental y operativa en oficina",
+        "audiencesTitle": "¿Para quién es?",
+        "audiencesDescription": "Quienes necesitan presencia local para desbloquear trámites que no se resuelven solo a distancia.",
+        "audiences": [
+          {
+            "title": "Residentes en el exterior",
+            "text": "Gestiones en origen sin tener que viajar ni dejar el trámite en manos improvisadas.",
+            "image": "/images/viaje-horizonte.webp"
+          },
+          {
+            "title": "Familias en otras provincias",
+            "text": "Coordinación territorial para obtener certificaciones donde realmente se emiten.",
+            "image": "/images/familia-manos.webp"
+          },
+          {
+            "title": "Expedientes urgentes en terreno",
+            "text": "Búsqueda y procesamiento físico cuando el reloj corre y hace falta presencia local.",
+            "image": "/images/ciudad-calle.webp"
+          }
+        ],
+        "photoCtaImage": "/images/equipo-reunion.webp",
+        "photoCtaTitle": "Estamos donde hay que estar",
+        "photoCtaDescription": "Díganos qué certificado o gestión necesita y coordinamos la actuación en el terreno con claridad.",
+        "seoTitle": "Gestión territorial de trámites en el terreno",
+        "seoDescription": "Gestión presencial de certificaciones en registros civiles, notarías y archivos locales. Atención en las principales ciudades de Cuba para quien está a distancia."
+      }
     },
     {
       "id": "logistico",
-      "title": "Remesas y telecomunicaciones",
-      "description": "Canal confiable para coordinar remesas y recargas de telefonía/conectividad para familiares en el país de origen.",
-      "value": "Centralice el cuidado legal de su futuro y el sustento diario de los suyos con un solo proveedor.",
+      "title": "Soporte logístico familiar: remesas seguras y telecomunicaciones",
+      "description": "Remesas seguras y recargas de telefonía para su familia en el país de origen, con un canal profesional.",
+      "value": "Cercanía y bienestar familiar: centralice con un solo proveedor profesional el cuidado legal de su futuro y el sustento diario de los suyos.",
       "icon": "HeartHandshake",
+      "href": "/servicios/logistico",
       "image": "/images/familia-manos.webp",
-      "imageAlt": "Familia conectada a la distancia"
+      "imageAlt": "Familia conectada a la distancia",
+      "detail": {
+        "eyebrow": "Servicio",
+        "heroDescription": "Remesas seguras y telecomunicaciones para cuidar a los suyos en el país de origen, con el mismo interlocutor de confianza.",
+        "breadcrumbLabel": "Soporte logístico familiar",
+        "introEyebrow": "El servicio",
+        "introTitle": "¿En qué consiste?",
+        "introParagraphs": [
+          "Canal confiable para la coordinación de envíos de ayuda económica (remesas) y la gestión de recargas de telefonía y conectividad para los familiares que residen en el país de origen.",
+          "Así centraliza con un solo proveedor profesional el cuidado legal de su futuro y el sustento diario de los suyos, con cercanía y orden."
+        ],
+        "introPoints": [
+          "Coordinación de remesas con canal confiable",
+          "Recargas de telefonía y conectividad",
+          "Soporte integrado a su proyecto migratorio o documental",
+          "Un solo interlocutor para lo legal y lo familiar"
+        ],
+        "introImage": "/images/familia-manos.webp",
+        "introImageAlt": "Familia conectada a la distancia",
+        "audiencesTitle": "¿Para quién es?",
+        "audiencesDescription": "Quienes quieren sostener a su familia con un canal serio, integrado a su proyecto migratorio o documental.",
+        "audiences": [
+          {
+            "title": "Familias separadas por la distancia",
+            "text": "Apoyo económico y conectividad para los que se quedaron en el país de origen.",
+            "image": "/images/familia.webp"
+          },
+          {
+            "title": "Clientes con trámites en curso",
+            "text": "Combine su expediente legal con soporte logístico sin fragmentar proveedores.",
+            "image": "/images/asesoria.webp"
+          },
+          {
+            "title": "Quienes buscan un canal de confianza",
+            "text": "Orden y cercanía para remesas y telecomunicaciones, sin improvisación.",
+            "image": "/images/profesional.webp"
+          }
+        ],
+        "photoCtaImage": "/images/familia.webp",
+        "photoCtaTitle": "Cuide lo legal y lo cotidiano en un solo lugar",
+        "photoCtaDescription": "Solicite asesoría y le contamos cómo coordinar remesas y conectividad con transparencia.",
+        "seoTitle": "Soporte logístico familiar: remesas y telecomunicaciones",
+        "seoDescription": "Remesas seguras y gestión de telecomunicaciones para familiares en el país de origen. Un solo interlocutor profesional para lo legal y lo cotidiano."
+      }
     }
   ],
   "pillars": [
     {
-      "title": "Gestión integral de punta a punta",
-      "description": "Desde la obtención de documentos hasta la migración en México, la homologación y el soporte familiar: un recorrido continuo con un solo interlocutor, sin fragmentar su trámite entre intermediarios."
+      "title": "Gestión integral y «llave en mano»",
+      "description": "Desde la obtención y legalización de documentos hasta la homologación de títulos y el soporte en remesas y telecomunicaciones: un ecosistema completo con un solo interlocutor, sin fragmentar su trámite entre intermediarios."
     },
     {
-      "title": "Respaldo legal y transparencia",
-      "description": "Servicio liderado por un profesional del derecho: asesoría honesta sobre viabilidad, manejo seguro de documentación sensible y claridad en cada paso."
+      "title": "Respaldo legal profesional y transparencia",
+      "description": "Servicio liderado por un profesional del derecho: conocimiento técnico de la normativa vigente, manejo seguro de documentación sensible y asesoría honesta sobre la viabilidad real de cada trámite."
     },
     {
-      "title": "Cobertura local, alcance internacional",
-      "description": "Especialización en trámites hacia México, presencia operativa en Cienfuegos y atención para la diáspora en EE. UU., España, LatAm y Europa."
+      "title": "Cobertura local con alcance internacional",
+      "description": "Firma mexicana con sede en Ciudad de México y atención en las principales ciudades de Cuba, con canal accesible también para clientes en EE. UU., España, América Latina y Europa."
     }
   ],
   "achievements": [
@@ -153,8 +429,8 @@
       "provisional": false
     },
     {
-      "value": "Cienfuegos",
-      "label": "Gestión operativa en terreno",
+      "value": "Cuba",
+      "label": "Principales ciudades del país",
       "provisional": false
     },
     {

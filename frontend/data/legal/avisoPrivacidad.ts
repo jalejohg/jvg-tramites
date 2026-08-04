@@ -10,7 +10,7 @@ export const AVISO_PRIVACIDAD: LegalDocumentContent = {
   title: "Aviso de privacidad",
   description:
     "Información sobre el tratamiento de sus datos personales al utilizar este sitio o contratar los servicios de Trámites Migratorios JVG.",
-  updatedLabel: "Última actualización: 1 de agosto de 2026.",
+  updatedLabel: "Última actualización: 4 de agosto de 2026.",
   intro: [
     `De conformidad con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la “Ley”), su Reglamento y lineamientos aplicables, ${SITE.name} (en adelante, el “Responsable”), marca comercial bajo la cual presta servicios profesionales el Lic. ${SITE.director}, pone a su disposición el presente Aviso de Privacidad.`,
     `El tratamiento de sus datos personales se realizará de manera lícita, informada y proporcional a las finalidades aquí descritas. Al proporcionar sus datos a través de este sitio web, del formulario de contacto, de WhatsApp, correo electrónico u otros canales de atención, usted reconoce haber leído y aceptado los términos de este Aviso.`,
@@ -26,7 +26,7 @@ export const AVISO_PRIVACIDAD: LegalDocumentContent = {
       list: [
         `Correo electrónico: ${SITE.email}`,
         `Teléfono / WhatsApp: ${SITE.phoneDisplay}`,
-        `Domicilio de atención: ${SITE.address}`,
+        `Ubicación publicada: ${SITE.address}`,
         `Ámbito de atención: ${SITE.locationLabel}`,
       ],
       afterList: [
@@ -41,7 +41,7 @@ export const AVISO_PRIVACIDAD: LegalDocumentContent = {
       ],
       list: [
         "Datos de identificación y contacto: nombre completo, correo electrónico, número telefónico, país o ciudad de residencia, y datos equivalentes que usted facilite voluntariamente.",
-        "Datos relativos a la consulta o al encargo: descripción del caso, tipo de servicio de interés (trámites migratorios, legalización y apostilla, homologación de títulos, gestión territorial, remesas y telecomunicaciones, u otros), y cualquier información que usted incluya en su mensaje.",
+        "Datos relativos a la consulta o al encargo: descripción del caso, tipo de servicio de interés (legalización y apostilla, homologación y validación de títulos, asesoría consular y procesos migratorios, gestión territorial, remesas y telecomunicaciones, u otros), y cualquier información que usted incluya en su mensaje.",
         "Datos documentales y migratorios: cuando el servicio lo requiera y usted los aporte, datos contenidos en documentos de identidad, actas del estado civil, títulos académicos, constancias, expedientes migratorios, visas, residencias, citas ante autoridades (por ejemplo, INM o consulados) y demás información necesaria para la gestoría o la asesoría.",
         "Datos de familiares o terceros: únicamente cuando usted los proporcione para reunificación familiar, soporte logístico, remesas u otros trámites que involucren a personas distintas de usted. En ese caso, usted declara contar con la legitimación o el consentimiento necesarios para compartir dicha información.",
         "Datos técnicos de navegación: dirección IP, tipo de dispositivo y navegador, páginas visitadas, fecha y hora de acceso, y datos análogos generados de forma automática por el sitio o por la infraestructura de hospedaje, en la medida en que resulten necesarios para la seguridad y el funcionamiento del servicio digital.",
@@ -132,9 +132,11 @@ export const AVISO_PRIVACIDAD: LegalDocumentContent = {
     },
     {
       id: "menores",
-      title: "9. Menores de edad",
+      title: "9. Mayores de edad y datos de menores",
       paragraphs: [
-        "Los servicios y el sitio están dirigidos principalmente a personas mayores de edad con capacidad legal para contratar. Si con motivo de un trámite (por ejemplo, reunificación familiar o formato de salida de menores) se tratan datos de menores, dichos datos deberán ser proporcionados por quien ejerza la patria potestad, tutela o representación legal, quien garantiza la veracidad de la información y la legitimación para su tratamiento.",
+        `Los servicios de ${SITE.name} y este sitio web están dirigidos exclusivamente a personas mayores de edad (18 años o más) con capacidad legal para contratar. El Responsable solo establece relación comercial o profesional con adultos; no acepta menores de edad como titulares del encargo ni como contratantes.`,
+        "Al proporcionar datos a través del sitio, del formulario, de WhatsApp, correo u otros canales, usted declara ser mayor de edad. Si el Responsable advierte que quien contacta es menor de edad, podrá abstenerse de continuar el tratamiento con fines de contratación y, en su caso, eliminar o bloquear los datos conforme a la Ley.",
+        "Únicamente podrán tratarse datos personales de menores cuando un adulto —quien ejerza la patria potestad, tutela o representación legal— los aporte en el marco de un trámite familiar o migratorio que ese adulto haya encargado (por ejemplo, reunificación familiar o documentos de hijos a cargo). Quien los proporcione garantiza la veracidad de la información y su legitimación para el tratamiento.",
       ],
     },
     {
@@ -149,7 +151,7 @@ export const AVISO_PRIVACIDAD: LegalDocumentContent = {
       id: "consentimiento",
       title: "11. Consentimiento",
       paragraphs: [
-        "Al marcar la casilla de aceptación en el formulario de contacto, al enviar datos por WhatsApp o correo, o al continuar el uso del sitio habiendo tenido acceso a este Aviso, usted consiente el tratamiento de sus datos personales en los términos aquí descritos, sin perjuicio de los derechos que la Ley le reconoce y de las finalidades que no requieren consentimiento por estar amparadas en alguna de las excepciones legales.",
+        "Al marcar la casilla de aceptación en el formulario de contacto, al enviar datos por WhatsApp o correo, o al continuar el uso del sitio habiendo tenido acceso a este Aviso, usted declara ser mayor de edad y consiente el tratamiento de sus datos personales en los términos aquí descritos, sin perjuicio de los derechos que la Ley le reconoce y de las finalidades que no requieren consentimiento por estar amparadas en alguna de las excepciones legales.",
       ],
     },
   ],

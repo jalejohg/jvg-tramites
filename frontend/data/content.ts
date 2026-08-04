@@ -13,10 +13,17 @@ import type {
 
 export type ServiceItem = KnowledgeService & {
   icon: ServiceIconName;
-  highlights?: readonly string[];
 };
 
 export const SERVICES: ServiceItem[] = knowledgeBase.services;
+
+export function getServiceBySlug(slug: string): ServiceItem | undefined {
+  return SERVICES.find((service) => service.id === slug);
+}
+
+export function serviceDetailPath(serviceId: string): string {
+  return `/servicios/${serviceId}`;
+}
 
 export const PILLARS = knowledgeBase.pillars;
 

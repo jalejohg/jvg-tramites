@@ -9,9 +9,9 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
   title: "Términos y condiciones",
   description:
     "Condiciones de uso de este sitio web y marco general de los servicios profesionales de Trámites Migratorios JVG.",
-  updatedLabel: "Última actualización: 1 de agosto de 2026.",
+  updatedLabel: "Última actualización: 4 de agosto de 2026.",
   intro: [
-    `Los presentes Términos y Condiciones (los “Términos”) regulan el acceso y uso del sitio web de ${SITE.name} (el “Sitio”), así como el marco general de la relación entre el usuario o cliente y el prestador de servicios identificado más abajo. Al navegar, consultar o utilizar el Sitio, o al solicitar información o servicios a través de él, usted declara haber leído, comprendido y aceptado estos Términos.`,
+    `Los presentes Términos y Condiciones (los “Términos”) regulan el acceso y uso del sitio web de ${SITE.name} (el “Sitio”), así como el marco general de la relación entre el usuario o cliente y el prestador de servicios identificado más abajo. Los servicios se ofrecen exclusivamente a personas mayores de edad. Al navegar, consultar o utilizar el Sitio, o al solicitar información o servicios a través de él, usted declara haber leído, comprendido y aceptado estos Términos, y declara ser mayor de edad con capacidad legal para obligarse.`,
     "Si no está de acuerdo con alguna disposición, le pedimos abstenerse de utilizar el Sitio y de enviar datos a través de sus formularios.",
   ],
   sections: [
@@ -25,23 +25,23 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
       list: [
         `Correo electrónico: ${SITE.email}`,
         `Teléfono / WhatsApp: ${SITE.phoneDisplay}`,
-        `Domicilio de atención publicado: ${SITE.address}`,
-        `Modalidad de atención: ${SITE.locationLabel}`,
+        `Ubicación publicada: ${SITE.address}`,
+        `Ámbito de atención: ${SITE.locationLabel}`,
       ],
     },
     {
       id: "objeto",
       title: "2. Objeto social y alcance de los servicios",
       paragraphs: [
-        `${SITE.name} ofrece consultoría jurídica y gestoría profesional orientada a facilitar procesos migratorios, documentales y de soporte familiar, con especialización en trámites hacia y dentro de México, y con capacidad operativa de gestión en terreno (incluyendo Cienfuegos) e atención a usuarios en distintos países.`,
+        `${SITE.name} ofrece consultoría jurídica y gestoría profesional orientada a facilitar procesos migratorios, documentales, consulares y de soporte familiar, con sede en Ciudad de México y atención en las principales ciudades de Cuba, así como a usuarios en distintos países.`,
       ],
       listIntro: "De manera enunciativa, el portafolio puede incluir:",
       list: [
-        "Asesoría y gestoría en trámites migratorios en México (residencias, visas, canjes, renovaciones, reunificación familiar, regularización, naturalización, permisos de trabajo, asesoría a inversionistas y empresas, y gestiones ante el INM u otras autoridades competentes).",
-        "Legalización, apostilla y obtención de documentos civiles, académicos y afines ante las instancias que correspondan.",
-        "Asesoría técnica y armado de expedientes para homologación o validación de títulos y estudios en el país de destino.",
-        "Gestión territorial en el terreno: búsqueda y procesamiento de certificaciones en registros, notarías y archivos locales.",
-        "Coordinación de soporte familiar en remesas y telecomunicaciones (recargas y conectividad), cuando se solicite expresamente.",
+        "Legalización y apostilla de documentos civiles y académicos ante los ministerios, el Ministerio de Relaciones Exteriores y embajadas o consulados correspondientes.",
+        "Asesoría técnica y armado de expedientes para homologación, validación o revalidación de títulos universitarios y estudios en el país de destino.",
+        "Asesoría consular y acompañamiento en procesos migratorios (visados, reunificación familiar, preparación para entrevistas consulares y análisis de viabilidad).",
+        "Gestión territorial de trámites en el terreno: búsqueda, solicitud y procesamiento de certificaciones en registros civiles, notarías y archivos locales.",
+        "Soporte logístico familiar: coordinación de remesas seguras y telecomunicaciones (recargas y conectividad), cuando se solicite expresamente.",
         "Atención presencial, virtual o mixta, según la naturaleza del trámite y lo acordado con el cliente.",
       ],
       afterList: [
@@ -75,26 +75,37 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
       ],
     },
     {
+      id: "mayoria-edad",
+      title: "5. Capacidad y mayoría de edad",
+      paragraphs: [
+        `${SITE.name} presta sus servicios y contrata encargos exclusivamente con personas mayores de edad (18 años o más) que tengan plena capacidad legal para obligarse. No se aceptan como titulares del encargo ni como contratantes a menores de edad.`,
+        "Al navegar el Sitio, enviar el formulario de contacto, escribir por WhatsApp u otros canales, o solicitar cotización o servicios, usted declara bajo su responsabilidad que es mayor de edad y que cuenta con capacidad legal para celebrar el vínculo de que se trate.",
+        "Si el Responsable tiene indicios de que quien solicita o pretende contratar es menor de edad, podrá declinar, suspender o cancelar la atención o el encargo, sin perjuicio de las medidas que procedan conforme a la ley.",
+        "Lo anterior no impide que, en el marco de un encargo contratado por un adulto (por ejemplo, reunificación familiar o trámites que involucren documentos de familiares), se gestionen datos o documentos de menores cuando quien ejerce la patria potestad, tutela o representación legal los aporte con legitimación para ello. En esos casos, la relación contractual y profesional se mantiene únicamente con la persona mayor de edad que contrata.",
+      ],
+    },
+    {
       id: "formulario",
-      title: "5. Solicitudes a través del formulario y otros canales",
+      title: "6. Solicitudes a través del formulario y otros canales",
       paragraphs: [
         "El formulario de contacto y los canales de WhatsApp, correo o teléfono permiten iniciar una conversación sobre su caso. El envío de una solicitud no implica la aceptación automática del encargo ni la reserva de un resultado.",
-        "El Responsable podrá requerir información o documentación adicional para evaluar la viabilidad del servicio. Se reserva el derecho de declinar un asunto cuando exista conflicto de interés, imposibilidad técnica o jurídica, información insuficiente, o cuando el encargo sea contrario a la ética profesional o a la ley.",
+        "El Responsable podrá requerir información o documentación adicional para evaluar la viabilidad del servicio. Se reserva el derecho de declinar un asunto cuando exista conflicto de interés, imposibilidad técnica o jurídica, información insuficiente, cuando quien solicita no acredite ser mayor de edad, o cuando el encargo sea contrario a la ética profesional o a la ley.",
         "Los datos personales proporcionados se tratan conforme al Aviso de Privacidad publicado en el Sitio, el cual forma parte integrante de estos Términos en lo relativo a protección de datos.",
       ],
     },
     {
       id: "obligaciones-cliente",
-      title: "6. Obligaciones del cliente o usuario",
+      title: "7. Obligaciones del cliente o usuario",
       paragraphs: [
         "Quien solicite o contrate servicios se obliga a:",
       ],
       list: [
+        "Ser mayor de edad y contar con capacidad legal para contratar; o, en su caso, actuar como representante legal debidamente acreditado de un tercero mayor de edad.",
         "Proporcionar información y documentación veraz, completa, legible y actualizada.",
         "Informar de cualquier cambio relevante en su situación migratoria, personal, laboral o documental que pueda afectar el trámite.",
         "Cumplir los requisitos, plazos de aportación de documentos y pagos acordados para la continuidad del servicio.",
         "Abstenerse de utilizar los servicios para simular hechos, falsear documentos o eludir disposiciones legales.",
-        "Obtener, cuando corresponda, el consentimiento o la representación legal necesarios respecto de datos o documentos de terceros, incluidos menores de edad.",
+        "Obtener, cuando corresponda, el consentimiento o la representación legal necesarios respecto de datos o documentos de terceros, incluidos menores de edad cuyas gestiones forme parte de un encargo contratado por un adulto.",
       ],
       afterList: [
         `Los retrasos, denegaciones o incidencias derivados de información incompleta, inexacta o extemporánea aportada por el cliente, o de omisiones atribuibles a este, no serán responsabilidad de ${SITE.name}.`,
@@ -102,7 +113,7 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
     },
     {
       id: "honorarios",
-      title: "7. Honorarios, cotizaciones y pagos",
+      title: "8. Honorarios, cotizaciones y pagos",
       paragraphs: [
         "Los honorarios y costos se cotizan caso por caso, en función de la complejidad, la urgencia, el tipo de trámite, el número de personas involucradas, desplazamientos y gestiones ante terceros.",
         "Salvo pacto escrito en contrario, las cotizaciones tienen carácter estimativo. Tasas, derechos, aranceles, traducciones, envíos, apostillas, pagos a autoridades o a proveedores externos suelen ser independientes de los honorarios profesionales y correrán por cuenta del cliente cuando así se indique.",
@@ -111,7 +122,7 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
     },
     {
       id: "terceros",
-      title: "8. Autoridades, terceros y servicios complementarios",
+      title: "9. Autoridades, terceros y servicios complementarios",
       paragraphs: [
         `En la prestación de los servicios pueden intervenir autoridades (como el Instituto Nacional de Migración, consulados, ministerios, registros civiles, instituciones educativas u otras) y proveedores externos. ${SITE.name} actúa como gestor y/o asesor en el marco del encargo, pero no controla ni responde por demoras, criterios, caídas de sistemas, cambios normativos o resoluciones de dichas entidades.`,
         `Respecto de remesas y telecomunicaciones, ${SITE.name} puede coordinar o canalizar la solicitud a través de proveedores o mecanismos disponibles en el mercado. Estos servicios complementarios están sujetos a las condiciones, comisiones, límites y regulaciones de los intermediarios financieros o de telecomunicaciones correspondientes. El cliente deberá verificar y aceptar las condiciones aplicables antes de confirmar la operación.`,
@@ -119,7 +130,7 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
     },
     {
       id: "propiedad",
-      title: "9. Propiedad intelectual",
+      title: "10. Propiedad intelectual",
       paragraphs: [
         `Los textos, diseño, logotipo, marcas, tipografías, imágenes, estructura y demás elementos del Sitio son titularidad de ${SITE.name}, del Lic. ${SITE.director} o de terceros licenciantes, y están protegidos por la legislación aplicable en materia de derechos de autor, propiedad industrial y competencia desleal.`,
         "Queda prohibida su reproducción, comunicación pública, transformación o distribución sin autorización previa y por escrito, salvo los usos permitidos por ley (como el derecho de cita con indicación de la fuente, cuando proceda).",
@@ -128,14 +139,14 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
     },
     {
       id: "enlaces",
-      title: "10. Enlaces a terceros",
+      title: "11. Enlaces a terceros",
       paragraphs: [
-        `El Sitio puede incluir enlaces a WhatsApp, redes sociales, mapas u otros sitios de terceros. Dichos recursos se rigen por sus propias condiciones y políticas de privacidad. ${SITE.name} no controla ni asume responsabilidad por el contenido, disponibilidad o prácticas de sitios ajenos, sin perjuicio de la diligencia razonable en la selección de enlaces de utilidad para el usuario.`,
+        `El Sitio puede incluir enlaces a WhatsApp, redes sociales u otros sitios de terceros. Dichos recursos se rigen por sus propias condiciones y políticas de privacidad. ${SITE.name} no controla ni asume responsabilidad por el contenido, disponibilidad o prácticas de sitios ajenos, sin perjuicio de la diligencia razonable en la selección de enlaces de utilidad para el usuario.`,
       ],
     },
     {
       id: "responsabilidad",
-      title: "11. Limitación de responsabilidad",
+      title: "12. Limitación de responsabilidad",
       paragraphs: [
         `En la máxima medida permitida por la ley aplicable, ${SITE.name} y el Lic. ${SITE.director} no serán responsables por:`,
       ],
@@ -151,21 +162,21 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
     },
     {
       id: "privacidad",
-      title: "12. Protección de datos personales",
+      title: "13. Protección de datos personales",
       paragraphs: [
         `El tratamiento de datos personales se rige por el Aviso de Privacidad disponible en el Sitio (/aviso-de-privacidad). Al utilizar el formulario de contacto, el usuario debe aceptar dicho Aviso. Para ejercer derechos ARCO o plantear dudas sobre privacidad, puede escribir a ${SITE.email}.`,
       ],
     },
     {
       id: "modificaciones",
-      title: "13. Modificaciones",
+      title: "14. Modificaciones",
       paragraphs: [
         `${SITE.name} podrá actualizar estos Términos para reflejar cambios en los servicios, en la operativa del Sitio o en la normativa aplicable. La versión vigente será la publicada en esta página, con su fecha de actualización. El uso continuado del Sitio tras la publicación de cambios implica la aceptación de la versión actualizada, sin perjuicio de los derechos que correspondan respecto de encargos ya formalizados bajo condiciones particulares previas.`,
       ],
     },
     {
       id: "ley",
-      title: "14. Ley aplicable y jurisdicción",
+      title: "15. Ley aplicable y jurisdicción",
       paragraphs: [
         "Estos Términos se interpretan de conformidad con las leyes aplicables en los Estados Unidos Mexicanos, sin perjuicio de normas imperativas del lugar de residencia del consumidor que resulten de aplicación necesaria.",
         "Para la resolución de controversias derivadas del uso del Sitio o de la interpretación de estos Términos, las partes se someten a los tribunales competentes de la Ciudad de México, renunciando a cualquier otro fuero que pudiera corresponderles por razón de domicilio presente o futuro, salvo que una norma de protección al consumidor imponga un fuero distinto de aplicación obligatoria.",
@@ -174,7 +185,7 @@ export const TERMINOS_Y_CONDICIONES: LegalDocumentContent = {
     },
     {
       id: "contacto-terminos",
-      title: "15. Contacto",
+      title: "16. Contacto",
       paragraphs: [
         `Para consultas sobre estos Términos y Condiciones, puede escribir a ${SITE.email} o comunicarse al WhatsApp ${SITE.phoneDisplay}.`,
       ],
