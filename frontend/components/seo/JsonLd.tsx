@@ -1,3 +1,4 @@
+import { organizationAreaServed } from "@/lib/coverage";
 import { SITE, SITE_URL, waLink } from "@/lib/siteConfig";
 
 /**
@@ -22,28 +23,19 @@ export default function JsonLd() {
         slogan: SITE.slogan,
         address: {
           "@type": "PostalAddress",
-          streetAddress: SITE.address,
           addressLocality: "Ciudad de México",
+          addressRegion: "CDMX",
           addressCountry: "MX",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: SITE.mapCoords.lat,
-          longitude: SITE.mapCoords.lng,
         },
         sameAs: [SITE.facebookGroup, SITE.facebookProfile].filter(Boolean),
         knowsAbout: [
-          "Trámites migratorios México",
-          "Residencia temporal y permanente",
-          "Apostilla y legalización de documentos",
-          "Homologación de títulos universitarios",
-          "Reunificación familiar",
+          "Legalización y apostilla de documentos civiles y académicos",
+          "Homologación y validación de títulos universitarios",
+          "Asesoría consular y acompañamiento en procesos migratorios",
+          "Gestión territorial de trámites en el terreno",
+          "Remesas seguras y telecomunicaciones",
         ],
-        areaServed: [
-          { "@type": "Country", name: "México" },
-          { "@type": "City", name: "Ciudad de México" },
-          { "@type": "City", name: "Cienfuegos" },
-        ],
+        areaServed: organizationAreaServed(),
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -52,6 +44,7 @@ export default function JsonLd() {
             email: SITE.email,
             availableLanguage: ["Spanish"],
             url: waLink(),
+            areaServed: ["MX", "CU"],
           },
         ],
         founder: {
