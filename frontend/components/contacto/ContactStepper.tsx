@@ -5,6 +5,7 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import CountrySelect from "@/components/contacto/CountrySelect";
 import { SERVICES } from "@/data/content";
+import { newTabLinkProps } from "@/lib/linkBehavior";
 import { SITE } from "@/lib/siteConfig";
 import { cn } from "@/lib/cn";
 import { contactService } from "@/services/contactService";
@@ -22,9 +23,9 @@ const MAX = {
 } as const;
 
 const fieldCls =
-  "w-full min-h-11 font-sans text-base text-ink bg-surface border border-border rounded-sm px-4 py-3 " +
+  "w-full min-h-11 font-sans text-base text-ink bg-surface border border-border rounded-md px-4 py-3 " +
   "transition-[border-color,box-shadow] duration-200 focus:outline-none focus:border-gold " +
-  "focus:shadow-[0_0_0_3px_rgba(196,163,90,.25)]";
+  "focus:shadow-[0_0_0_3px_rgba(213,158,63,.28)]";
 
 const SERVICE_OPTIONS = [
   ...SERVICES.map((s) => s.title),
@@ -143,7 +144,7 @@ export default function ContactStepper() {
   if (status === "success") {
     return (
       <div
-        className="border border-border bg-surface p-8 text-center md:p-12"
+        className="rounded-2xl border border-border-subtle bg-surface p-8 text-center shadow-sm md:p-12"
         role="status"
         aria-live="polite"
       >
@@ -176,7 +177,7 @@ export default function ContactStepper() {
     <form
       ref={formRef}
       onSubmit={onSubmit}
-      className="border border-border bg-surface p-6 md:p-8"
+      className="rounded-2xl border border-border-subtle bg-surface p-6 shadow-sm md:p-8"
       noValidate
     >
       <div className="mb-8">
@@ -187,7 +188,7 @@ export default function ContactStepper() {
           <p className="text-sm font-semibold text-ink">{STEP_LABELS[cur]}</p>
         </div>
         <div
-          className="mt-3 h-1 overflow-hidden bg-border"
+          className="mt-3 h-1.5 overflow-hidden rounded-full bg-border-subtle"
           role="progressbar"
           aria-valuenow={cur + 1}
           aria-valuemin={1}
@@ -315,7 +316,7 @@ export default function ContactStepper() {
                   className={cn(
                     "flex min-h-11 cursor-pointer items-center gap-3 border px-4 py-3 transition-colors duration-200",
                     data.servicio === opt
-                      ? "border-gold bg-bg"
+                      ? "border-gold bg-gold/10"
                       : "border-border hover:border-gold/60"
                   )}
                 >
@@ -379,6 +380,7 @@ export default function ContactStepper() {
                 He leído y acepto el{" "}
                 <Link
                   href="/aviso-de-privacidad"
+                  {...newTabLinkProps("/aviso-de-privacidad")}
                   className="font-medium text-ink underline-offset-2 hover:underline"
                 >
                   aviso de privacidad

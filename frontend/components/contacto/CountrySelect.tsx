@@ -120,9 +120,9 @@ export default function CountrySelect({
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-err` : undefined}
         className={cn(
-          "flex w-full min-h-11 cursor-pointer items-center gap-3 rounded-sm border border-border bg-surface px-4 py-3 text-left font-sans text-base",
-          "transition-[border-color,box-shadow] duration-200 focus:outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(196,163,90,.25)]",
-          open && "border-gold shadow-[0_0_0_3px_rgba(196,163,90,.25)]"
+          "flex w-full min-h-11 cursor-pointer items-center gap-3 rounded-md border border-border bg-surface px-4 py-3 text-left font-sans text-base",
+          "transition-[border-color,box-shadow] duration-200 focus:outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(213,158,63,.28)]",
+          open && "border-gold shadow-[0_0_0_3px_rgba(213,158,63,.28)]"
         )}
       >
         {selected ? (
@@ -153,9 +153,9 @@ export default function CountrySelect({
       </button>
 
       {open && (
-        <div className="absolute left-0 right-0 z-30 mt-2 overflow-hidden rounded-sm border border-border bg-surface shadow-lg animate-step-in motion-reduce:animate-none">
-          <div className="border-b border-border p-2.5">
-            <div className="flex items-center gap-2 rounded-sm border border-border bg-bg px-3 py-2 focus-within:border-gold transition-colors duration-200">
+        <div className="absolute left-0 right-0 z-30 mt-2 overflow-hidden rounded-xl border border-border-subtle bg-surface shadow-lg animate-step-in motion-reduce:animate-none">
+          <div className="border-b border-border-subtle p-2.5">
+            <div className="flex items-center gap-2 rounded-md border border-border bg-bg px-3 py-2 focus-within:border-gold transition-colors duration-200">
               <svg
                 viewBox="0 0 24 24"
                 className="h-[18px] w-[18px] shrink-0 text-muted"
