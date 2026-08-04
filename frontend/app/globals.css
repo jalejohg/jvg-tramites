@@ -2,39 +2,66 @@
 
 /* ============================================================
    TRÁMITES MIGRATORIOS JVG — Design tokens
-   Trust & Authority · beige / negro / dorado · sin dark mode
+   3 colores + blanco de fondo · Soft Organic · sin dark mode
+
+   1. Ink    #141414  (negro)
+   2. Gold   #D59E3F  (dorado luminoso de marca)
+   3. Beige  #F7F4EF  (cálido de marca)
+   + White   #FFFFFF  (fondo)
    ============================================================ */
 
 @theme {
-  --color-bg: #f7f4ef;
+  /* --- Base (blanco de fondo) --- */
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
+
+  /* --- Los 3 colores de marca --- */
   --color-ink: #141414;
-  --color-muted: #5c5a56;
-  /* border-strong ≥ 3:1 sobre bg (WCAG 1.4.11 controles) */
-  --color-border: #8a847a;
-  --color-border-subtle: #e4dfd6;
-  --color-gold: #c4a35a;
-  /* gold-deep ≥ 4,5:1 sobre bg para texto pequeño (eyebrows) */
-  --color-gold-deep: #7a6124;
-  --color-gold-soft: #e8d5a3;
-  --color-warm: #efe6d8;
-  --color-cta: #141414;
-  --color-cta-hover: #2a2a2a;
-  --color-on-cta: #f7f4ef;
+  --color-gold: #d59e3f;
+  --color-beige: #f7f4ef;
+
+  /* Alias: sección cálida = beige (tercer color) */
+  --color-warm: #f7f4ef;
+
+  /* --- Derivados (tintes de los 3 + blanco; no inventan marca) --- */
+  --color-muted: color-mix(in srgb, var(--color-ink) 58%, white);
+  /* Controles ≥ 3:1 sobre blanco */
+  --color-border: color-mix(in srgb, var(--color-ink) 48%, white);
+  --color-border-subtle: color-mix(in srgb, var(--color-ink) 10%, white);
+  /* Texto dorado pequeño sobre blanco ≥ 4.5:1 */
+  --color-gold-deep: color-mix(in srgb, var(--color-gold) 62%, var(--color-ink));
+  /* Highlight / degradado luminoso */
+  --color-gold-light: color-mix(in srgb, var(--color-gold) 52%, white);
+  --color-gold-soft: color-mix(in srgb, var(--color-gold) 42%, white);
+
+  --color-cta: var(--color-ink);
+  --color-cta-hover: color-mix(in srgb, var(--color-ink) 88%, white);
+  --color-on-cta: #ffffff;
+  --color-ring: var(--color-gold);
+
+  /* Funcional (accesibilidad de errores; no es color de marca) */
   --color-destructive: #b91c1c;
-  --color-ring: #c4a35a;
 
-  --radius-sm: 2px;
-  --radius-md: 4px;
+  /* Soft organic */
+  --radius-sm: 0.625rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.125rem;
+  --radius-xl: 1.375rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
 
-  --shadow-sm: 0 1px 2px rgba(20, 20, 20, 0.04);
-  --shadow-md: 0 4px 16px rgba(20, 20, 20, 0.08);
-  --shadow-lg: 0 12px 40px rgba(20, 20, 20, 0.12);
+  --shadow-sm: 0 2px 10px color-mix(in srgb, var(--color-ink) 5%, transparent);
+  --shadow-md: 0 10px 28px color-mix(in srgb, var(--color-ink) 8%, transparent);
+  --shadow-lg: 0 18px 52px color-mix(in srgb, var(--color-ink) 11%, transparent);
+  --shadow-gold:
+    0 0 10px color-mix(in srgb, var(--color-gold) 28%, transparent),
+    0 4px 12px color-mix(in srgb, var(--color-gold) 14%, transparent);
 
   --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
 
   --animate-wapulse: wapulse 2s infinite;
   --animate-step-in: stepIn 0.35s var(--ease-fluid);
+  --animate-hero-zoom: heroZoom 16s ease-out forwards;
 }
 
 @theme inline {
@@ -62,6 +89,22 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Zoom lento del hero (patrón Migralex Ken Burns) */
+@keyframes heroZoom {
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
 
@@ -96,16 +139,86 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-ring);
   outline-offset: 3px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-gold) 28%, transparent);
 }
 
-/* Inputs / controles: borde con contraste ≥ 3:1 (tokens --color-border) */
 input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
 textarea,
 select {
   border-color: var(--color-border);
 }
 
-/* Zoom-in al hover en fotos de contenido (no fondos ni logos) */
+/* --- Dorado luminoso de marca (halo + degradado) --- */
+@utility text-gold-luxe {
+  background-image: linear-gradient(
+    105deg,
+    var(--color-gold-deep) 0%,
+    var(--color-gold) 42%,
+    var(--color-gold-light) 72%,
+    var(--color-gold) 100%
+  );
+  background-size: 160% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--color-gold) 22%, transparent));
+}
+
+@utility bg-gold-luxe {
+  background-image: linear-gradient(
+    120deg,
+    var(--color-gold-deep),
+    var(--color-gold) 48%,
+    var(--color-gold-light) 78%,
+    var(--color-gold) 100%
+  );
+  background-size: 160% 100%;
+  box-shadow: var(--shadow-gold);
+  color: var(--color-ink);
+}
+
+/* Badge numérico Soft Organic — tinte suave, sin metal / sin halo */
+@utility gold-orb {
+  background-color: var(--color-gold-soft);
+  color: var(--color-gold-deep);
+  box-shadow: none;
+  border: 1px solid color-mix(in srgb, var(--color-gold) 28%, transparent);
+}
+
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+/* Halo muy discreto en acentos dorados */
+.text-gold,
+.text-gold-deep {
+  text-shadow: 0 0 8px color-mix(in srgb, var(--color-gold) 18%, transparent);
+}
+
+.text-gold svg,
+.text-gold-deep svg,
+.fill-gold,
+.stroke-gold {
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-gold) 28%, transparent));
+}
+
+.bg-gold {
+  box-shadow:
+    0 0 8px color-mix(in srgb, var(--color-gold) 28%, transparent),
+    0 2px 8px color-mix(in srgb, var(--color-gold) 12%, transparent);
+}
+
+.border-gold {
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-gold) 16%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text-gold-luxe,
+  .bg-gold-luxe {
+    animation: goldShimmer 7s ease-in-out infinite alternate;
+  }
+}
+
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   img:not(.img-bg):not(.no-zoom) {
     transition: transform 0.55s var(--ease-fluid);

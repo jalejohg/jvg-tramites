@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
+import { newTabLinkProps } from "@/lib/linkBehavior";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -14,7 +15,7 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 font-sans text-[0.95rem] font-semibold tracking-wide rounded-sm cursor-pointer transition-[transform,background-color,color,box-shadow,border-color] duration-200 ease-[var(--ease-fluid)] disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
+  "inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 font-sans text-[0.95rem] font-semibold tracking-wide rounded-md cursor-pointer transition-[transform,background-color,color,box-shadow,border-color] duration-200 ease-[var(--ease-fluid)] disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
 
 type ButtonAsButton = {
   href?: undefined;
@@ -39,9 +40,16 @@ export default function Button({
   const cls = cn(base, variants[variant], className);
 
   if ("href" in rest && rest.href) {
-    const { href, ...linkRest } = rest;
+    const { href, target, rel, ...linkRest } = rest;
+    const auto = newTabLinkProps(href);
     return (
-      <Link href={href} className={cls} {...linkRest}>
+      <Link
+        href={href}
+        className={cls}
+        target={target ?? auto.target}
+        rel={rel ?? auto.rel}
+        {...linkRest}
+      >
         {children}
       </Link>
     );
