@@ -19,7 +19,7 @@ function PillarCard({
 }) {
   return (
     <Reveal delay={Math.min(index, 4) as 0 | 1 | 2 | 3 | 4}>
-      <article className="border border-border/80 bg-surface/95 p-7 shadow-lg backdrop-blur-md md:p-9">
+      <article className="rounded-2xl border border-border-subtle/80 bg-surface/95 p-7 shadow-lg backdrop-blur-md md:p-9">
         <p className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-gold-deep">
           Pilar 0{index + 1}
         </p>
@@ -77,9 +77,14 @@ export default function HomePillars() {
               </h2>
               <p className="mt-4 max-w-xl text-base text-ink/80 md:text-lg text-pretty">
                 Gestión integral, respaldo profesional y cobertura que une{" "}
-                <strong className="font-semibold text-ink">Cienfuegos</strong> con{" "}
-                <strong className="font-semibold text-ink">México</strong> y el
-                mundo — sobre el mismo camino que usted recorre.
+                <strong className="font-semibold text-ink">
+                  Ciudad de México
+                </strong>{" "}
+                con las{" "}
+                <strong className="font-semibold text-ink">
+                  principales ciudades de Cuba
+                </strong>{" "}
+                y el mundo — sobre el mismo camino que usted recorre.
               </p>
             </Reveal>
           </Container>

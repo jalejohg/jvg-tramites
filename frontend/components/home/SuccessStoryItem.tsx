@@ -30,7 +30,7 @@ function SuccessStoryItem({ story, index }: SuccessStoryItemProps) {
       <figure className="flex h-full flex-col">
         <div
           className={cn(
-            "relative overflow-hidden border border-border bg-warm/40",
+            "relative overflow-hidden rounded-xl border border-border-subtle bg-beige shadow-sm",
             ASPECT_CLASS[story.span]
           )}
         >

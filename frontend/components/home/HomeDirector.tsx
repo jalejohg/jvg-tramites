@@ -10,7 +10,7 @@ export default function HomeDirector() {
       <Container>
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
           <Reveal>
-            <div className="relative aspect-square overflow-hidden border border-border bg-ink">
+            <div className="relative aspect-square overflow-hidden rounded-2xl border border-border-subtle bg-ink shadow-md">
               <Image
                 src={SITE.directorImage}
                 alt={`${SITE.director}, ${SITE.directorRole}`}

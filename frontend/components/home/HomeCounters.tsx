@@ -11,7 +11,7 @@ function CounterItem({
 }) {
   return (
     <Reveal delay={Math.min(index, 4) as 0 | 1 | 2 | 3 | 4}>
-      <div className="border-t border-border pt-6 md:border-t-0 md:border-l md:pt-0 md:pl-8 first:md:border-l-0 first:md:pl-0">
+      <div className="rounded-xl border border-border-subtle bg-surface px-5 py-6 shadow-sm">
         <p className="font-serif text-3xl font-medium text-ink md:text-4xl">
           {item.value}
         </p>

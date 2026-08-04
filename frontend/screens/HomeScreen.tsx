@@ -1,9 +1,8 @@
 import HomeHero from "@/components/home/HomeHero";
+import HomeAbout from "@/components/home/HomeAbout";
 import HomeServices from "@/components/home/HomeServices";
-import HomePillars from "@/components/home/HomePillars";
 import HomeProcess from "@/components/home/HomeProcess";
-import HomeDirector from "@/components/home/HomeDirector";
-import HomeCounters from "@/components/home/HomeCounters";
+import HomeCases from "@/components/home/HomeCases";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 import HomeCta from "@/components/home/HomeCta";
 
@@ -11,11 +10,10 @@ export default function HomeScreen() {
   return (
     <main id="contenido-principal">
       <HomeHero />
+      <HomeAbout />
       <HomeServices />
-      <HomePillars />
       <HomeProcess />
-      <HomeDirector />
-      <HomeCounters />
+      <HomeCases />
       <HomeTestimonials />
       <HomeCta />
     </main>

@@ -1,17 +1,23 @@
+import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import SectionHead from "@/components/ui/SectionHead";
-import SuccessStoryItem from "@/components/home/SuccessStoryItem";
-import { SUCCESS_STORIES, TESTIMONIALS, type Testimonial } from "@/data/content";
+import { TESTIMONIALS, type Testimonial } from "@/data/content";
 
-function QuoteItem({ item, index }: { item: Testimonial; index: number }) {
+function QuoteCard({ item, index }: { item: Testimonial; index: number }) {
   return (
     <Reveal delay={Math.min(index, 4) as 0 | 1 | 2 | 3 | 4} as="blockquote">
-      <div className="border-l-2 border-l-gold pl-5">
-        <p className="font-serif text-lg leading-relaxed text-ink text-pretty italic">
+      <div className="flex h-full flex-col rounded-xl border border-border-subtle bg-surface p-6 shadow-sm md:p-7">
+        <Quote
+          className="h-8 w-8 text-gold-deep/80"
+          aria-hidden
+          strokeWidth={1.5}
+        />
+        <p className="mt-4 flex-1 font-serif text-lg leading-relaxed text-ink text-pretty italic">
           «{item.quote}»
         </p>
-        <footer className="mt-4">
+        <footer className="mt-6 border-t border-border-subtle pt-5">
           <cite className="not-italic">
             <span className="block text-sm font-semibold text-ink">
               {item.name}
@@ -24,51 +30,25 @@ function QuoteItem({ item, index }: { item: Testimonial; index: number }) {
   );
 }
 
-/**
- * Storybook visual de entregas reales + testimonios del cliente.
- * Patrón ui-ux-pro-max: Portfolio Grid + Hero/Testimonials social proof.
- */
 export default function HomeTestimonials() {
   return (
     <section
-      className="relative overflow-hidden border-y border-border bg-surface py-20 md:py-28"
-      aria-label="Historias reales de entregas"
+      className="relative overflow-hidden bg-bg py-20 md:py-28"
+      aria-labelledby="testimonials-heading"
     >
-      <div
-        className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-gold/15 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -left-16 bottom-24 h-56 w-56 rounded-full bg-gold-soft/40 blur-3xl"
-        aria-hidden
-      />
-
+      <SectionAtmosphere mirror />
       <Container className="relative">
         <Reveal>
           <SectionHead
-            eyebrow="Historias reales"
-            title="Resultados que se ven"
-            description="Entregas, residencias y acompañamientos reales de familias y profesionales que confían en JVG. La prueba está en cada documento en mano."
+            eyebrow="Voces"
+            title="Lo que dicen quienes nos confían su caso"
+            description="Testimonios reales de profesionales y familias acompañadas por JVG."
           />
         </Reveal>
-
-        <div className="mt-12 grid grid-cols-2 gap-x-3 gap-y-8 md:grid-cols-4 md:auto-rows-[minmax(0,auto)] md:gap-x-4 md:gap-y-10">
-          {SUCCESS_STORIES.map((story, i) => (
-            <SuccessStoryItem key={story.id} story={story} index={i} />
+        <div className="mt-12 grid gap-5 md:grid-cols-3 md:gap-6">
+          {TESTIMONIALS.map((item, i) => (
+            <QuoteCard key={item.name} item={item} index={i} />
           ))}
-        </div>
-
-        <div className="mt-16 border-t border-border pt-12 md:mt-20 md:pt-16">
-          <Reveal>
-            <p className="mb-8 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-deep">
-              Voces
-            </p>
-          </Reveal>
-          <div className="grid gap-8 md:grid-cols-3 md:gap-10">
-            {TESTIMONIALS.map((item, i) => (
-              <QuoteItem key={item.name} item={item} index={i} />
-            ))}
-          </div>
         </div>
       </Container>
     </section>

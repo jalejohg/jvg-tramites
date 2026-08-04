@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import SectionHead from "@/components/ui/SectionHead";
 import { PROCESS_STEPS } from "@/data/content";
 
@@ -19,7 +20,7 @@ function ProcessStepItem({
   return (
     <Reveal delay={Math.min(index, 4) as 0 | 1 | 2 | 3 | 4}>
       <li className="relative flex gap-4 border-l-2 border-gold/40 pl-5 md:border-l-0 md:pl-0">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-gold text-ink font-serif text-lg md:mb-4">
+        <span className="gold-orb flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-serif text-lg md:mb-4">
           {step.step}
         </span>
         <div>
@@ -35,11 +36,12 @@ function ProcessStepItem({
 
 export default function HomeProcess() {
   return (
-    <section className="bg-warm py-20 md:py-28">
-      <Container>
+    <section className="relative overflow-hidden bg-bg py-20 md:py-28">
+      <SectionAtmosphere />
+      <Container className="relative">
         <div className="grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
           <Reveal className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden border border-border md:aspect-[3/4]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border-subtle shadow-sm md:aspect-[3/4]">
               <Image
                 src={PROCESS_IMAGE}
                 alt="Conversación profesional de acompañamiento"

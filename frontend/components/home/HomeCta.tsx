@@ -1,52 +1,84 @@
-import Image from "next/image";
+import {
+  Globe2,
+  Scale,
+  Shuffle,
+  type LucideIcon,
+} from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import { CONTACT_FORM_HREF, SITE, waLink } from "@/lib/siteConfig";
 
-const CTA_IMAGE = "/images/cta-viaje.webp";
+const BENEFITS: { title: string; Icon: LucideIcon }[] = [
+  { title: "Gestión integral", Icon: Shuffle },
+  { title: "Respaldo legal", Icon: Scale },
+  { title: "Alcance internacional", Icon: Globe2 },
+];
 
+function CtaBenefitItem({
+  title,
+  Icon,
+  index,
+}: {
+  title: string;
+  Icon: LucideIcon;
+  index: number;
+}) {
+  return (
+    <Reveal delay={Math.min(index + 1, 4) as 0 | 1 | 2 | 3 | 4}>
+      <div className="flex items-center gap-3">
+        <span className="gold-orb flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
+          <Icon className="h-5 w-5" aria-hidden />
+        </span>
+        <p className="text-sm font-semibold text-ink md:text-base">{title}</p>
+      </div>
+    </Reveal>
+  );
+}
+
+/**
+ * CTA pre-footer en canvas claro — deja el ink exclusivo al footer
+ * (evita dos franjas oscuras seguidas).
+ */
 export default function HomeCta() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
-      <Image
-        src={CTA_IMAGE}
-        alt=""
-        fill
-        className="img-bg object-cover object-center"
-        sizes="100vw"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-bg/92 via-bg/88 to-gold-soft/50"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(196,163,90,0.22),transparent_55%)]"
-        aria-hidden
-      />
-
+    <section
+      aria-labelledby="cta-heading"
+      className="relative overflow-hidden border-t border-border-subtle bg-bg py-16 md:py-20"
+    >
+      <SectionAtmosphere />
       <Container className="relative">
-        <Reveal>
-          <div className="border border-gold/40 bg-surface/90 px-8 py-12 text-center shadow-lg backdrop-blur-md md:px-16 md:py-16">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-deep">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
+          <Reveal>
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-deep [text-shadow:none]">
               Dé el siguiente paso
             </p>
-            <h2 className="mx-auto mt-3 max-w-2xl font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-medium text-ink text-balance">
+            <h2
+              id="cta-heading"
+              className="mt-3 max-w-xl font-serif text-[clamp(1.75rem,3.5vw,2.75rem)] font-medium leading-[1.15] text-ink text-balance"
+            >
               Cuéntenos su caso. Le respondemos con claridad y respeto.
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-muted text-pretty">
-              {SITE.slogan} Solicite asesoría o escríbanos por WhatsApp: estamos
-              para simplificar su camino.
+            <p className="mt-4 max-w-lg text-muted text-pretty">
+              {SITE.slogan} Solicite asesoría o escríbanos por WhatsApp.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button href={CONTACT_FORM_HREF}>Solicitar asesoría</Button>
               <Button href={waLink()} variant="secondary">
                 WhatsApp
               </Button>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+
+          <ul className="grid gap-5 sm:grid-cols-3 lg:grid-cols-1">
+            {BENEFITS.map((item, i) => (
+              <li key={item.title}>
+                <CtaBenefitItem title={item.title} Icon={item.Icon} index={i} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </Container>
     </section>
   );
