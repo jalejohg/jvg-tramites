@@ -1,0 +1,27 @@
+<svg width="720" height="300" viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FlyChira">
+  <defs>
+    <linearGradient id="planeLight" x1="200" y1="55" x2="300" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffab66"/><stop offset="1" stop-color="#ff5f00"/>
+    </linearGradient>
+    <linearGradient id="planeDark" x1="500" y1="55" x2="389" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff5f00"/><stop offset="1" stop-color="#c24400"/>
+    </linearGradient>
+  </defs>
+  <defs>
+    <linearGradient id="textGrad" x1="0" y1="102" x2="0" y2="198" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff8c3d"/><stop offset="0.55" stop-color="#ff5f00"/><stop offset="1" stop-color="#cc4b00"/>
+    </linearGradient>
+    <filter id="glowText" x="-25%" y="-70%" width="150%" height="260%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b"/>
+      <feFlood flood-color="#ff5f00" flood-opacity="0.85"/>
+      <feComposite in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="g"/></feMerge>
+    </filter>
+  </defs>
+  <g transform="translate(-18 71) scale(0.28)">
+    <path d="M 631.29 112.61 L 520.65 189.54 L 290.90 350.65 L 285.74 350.76 L 279.09 344.17 L 136.01 184.80 L 127.39 174.93 L 128.81 170.18 L 131.00 167.34 L 698.16 51.86 L 705.25 50.38 L 709.35 53.99 Z" fill="url(#planeLight)"/>
+    <path d="M 323.78 389.38 L 185.24 508.11 L 179.29 511.65 L 174.01 508.66 L 132.27 209.04 L 133.25 208.27 L 144.35 221.55 L 290.88 387.16 L 298.92 395.84 L 301.81 393.97 Z" fill="url(#planeLight)"/>
+    <path d="M 301.81 393.97 L 631.29 112.61 L 709.35 53.99 L 709.49 58.18 L 704.16 64.63 L 395.54 430.42 L 388.66 430.84 L 344.24 402.41 L 323.78 389.38 Z" fill="url(#planeDark)"/>
+  </g>
+  <text x="208" y="150" font-family="'Poppins','Inter',system-ui,-apple-system,'Segoe UI',sans-serif" font-size="96" font-weight="700" letter-spacing="-3" dominant-baseline="central"><tspan fill="#ffffff">Fly</tspan><tspan fill="url(#textGrad)">Chira</tspan></text>
+</svg>
