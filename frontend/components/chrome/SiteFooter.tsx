@@ -2,20 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import FooterNavLink from "@/components/chrome/FooterNavLink";
+import SectionAtmosphere from "@/components/ui/SectionAtmosphere";
 import { SERVICES } from "@/data/content";
-import { SITE, mailLink, mapsEmbedUrl, mapsLink, waLink } from "@/lib/siteConfig";
+import { newTabLinkProps } from "@/lib/linkBehavior";
+import { SITE, mailLink, waLink } from "@/lib/siteConfig";
 
 const EXPLORE_LINKS = [
+  { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Nosotros" },
+  { href: "/servicios", label: "Servicios" },
   { href: "/proceso", label: "Proceso" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-ink text-on-cta">
-      <div className="h-1 bg-gradient-to-r from-gold-deep via-gold to-gold-deep" />
-      <Container className="py-14 md:py-16">
+    <footer className="relative overflow-hidden border-t border-border bg-ink text-on-cta">
+      <SectionAtmosphere tone="ink" />
+      <div className="relative h-1 bg-gradient-to-r from-gold-deep via-gold to-gold-deep" />
+      <Container className="relative py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Image
@@ -29,7 +34,13 @@ export default function SiteFooter() {
               {SITE.slogan}
             </p>
             <p className="mt-3 text-sm text-on-cta/65">{SITE.locationLabel}</p>
-            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+          </div>
+
+          <div>
+            <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+              Explorar
+            </h3>
+            <ul className="mt-4 space-y-2">
               {EXPLORE_LINKS.map((link) => (
                 <li key={link.href}>
                   <FooterNavLink href={link.href} label={link.label} />
@@ -46,7 +57,7 @@ export default function SiteFooter() {
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href={s.href ?? "/servicios"}
+                    href={s.href}
                     className="text-sm text-on-cta/75 transition-colors hover:text-gold cursor-pointer"
                   >
                     {s.title}
@@ -64,8 +75,7 @@ export default function SiteFooter() {
               <li>
                 <a
                   href={waLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...newTabLinkProps(waLink())}
                   className="hover:text-gold transition-colors cursor-pointer"
                 >
                   WhatsApp: {SITE.phoneDisplay}
@@ -74,27 +84,23 @@ export default function SiteFooter() {
               <li>
                 <a
                   href={mailLink}
+                  {...newTabLinkProps(mailLink)}
                   className="hover:text-gold transition-colors cursor-pointer"
                 >
                   {SITE.email}
                 </a>
               </li>
               <li>
-                <a
-                  href={mapsLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gold transition-colors cursor-pointer"
-                >
-                  {SITE.address}
-                </a>
+                <p className="text-pretty">{SITE.address}</p>
+                <p className="mt-1 text-on-cta/55 text-pretty">
+                  Atención en las principales ciudades de Cuba
+                </p>
               </li>
             </ul>
             <div className="mt-4 flex flex-col gap-2 text-sm">
               <a
                 href={SITE.facebookGroup}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...newTabLinkProps(SITE.facebookGroup)}
                 className="text-on-cta/75 hover:text-gold transition-colors cursor-pointer"
               >
                 Grupo de Facebook
@@ -102,8 +108,7 @@ export default function SiteFooter() {
               {SITE.facebookProfile ? (
                 <a
                   href={SITE.facebookProfile}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...newTabLinkProps(SITE.facebookProfile)}
                   className="text-on-cta/75 hover:text-gold transition-colors cursor-pointer"
                 >
                   Facebook · {SITE.director}
@@ -111,41 +116,45 @@ export default function SiteFooter() {
               ) : null}
             </div>
           </div>
-
-          <div>
-            <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-              Ubicación
-            </h3>
-            <div className="mt-4 overflow-hidden rounded-sm border border-white/10">
-              <iframe
-                title={`Mapa — ${SITE.address}`}
-                src={mapsEmbedUrl()}
-                className="h-36 w-full grayscale-[0.2] contrast-[1.05]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-on-cta/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {SITE.name}. Todos los derechos
-            reservados.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/aviso-de-privacidad"
-              className="hover:text-gold transition-colors cursor-pointer"
-            >
-              Aviso de privacidad
-            </Link>
-            <Link
-              href="/terminos-y-condiciones"
-              className="hover:text-gold transition-colors cursor-pointer"
-            >
-              Términos y condiciones
-            </Link>
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-7 text-[0.85rem] text-on-cta/55">
+          <a
+            href="https://flychira.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[0.82rem] text-on-cta/70 transition-opacity duration-200 hover:opacity-80 cursor-pointer"
+          >
+            <span className="opacity-60">Powered by</span>
+            <Image
+              src="/assets/naranja-glow-flyblanco.svg"
+              alt="FlyChira"
+              width={140}
+              height={48}
+              className="h-12 w-auto no-zoom"
+            />
+          </a>
+          <div className="flex flex-wrap items-center gap-5">
+            <nav className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              <Link
+                href="/aviso-de-privacidad"
+                {...newTabLinkProps("/aviso-de-privacidad")}
+                className="hover:text-gold transition-colors cursor-pointer"
+              >
+                Aviso de privacidad
+              </Link>
+              <Link
+                href="/terminos-y-condiciones"
+                {...newTabLinkProps("/terminos-y-condiciones")}
+                className="hover:text-gold transition-colors cursor-pointer"
+              >
+                Términos y condiciones
+              </Link>
+            </nav>
+            <span className="opacity-70">
+              © {new Date().getFullYear()} {SITE.name}. Todos los derechos
+              reservados.
+            </span>
           </div>
         </div>
       </Container>

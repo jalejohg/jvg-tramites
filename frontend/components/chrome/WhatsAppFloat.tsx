@@ -80,8 +80,8 @@ export default function WhatsAppFloat() {
             aria-modal="true"
             aria-labelledby={titleId}
             className={cn(
-              "relative z-[91] w-[min(22.5rem,calc(100vw-2rem))] overflow-hidden",
-              "border border-border bg-surface shadow-lg",
+              "relative z-[91] w-[min(22.5rem,calc(100vw-2rem))] overflow-hidden rounded-2xl",
+              "border border-border-subtle bg-surface shadow-lg",
               "animate-[stepIn_0.3s_var(--ease-fluid)]",
             )}
           >
@@ -102,7 +102,7 @@ export default function WhatsAppFloat() {
                 type="button"
                 aria-label="Cerrar"
                 onClick={() => setOpen(false)}
-                className="grid h-9 w-9 shrink-0 place-items-center rounded-sm text-white/90 transition-colors hover:bg-white/10 hover:text-white cursor-pointer"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-white/90 transition-colors hover:bg-white/10 hover:text-white cursor-pointer"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" aria-hidden>
                   <path d="M6 6l12 12M18 6L6 18" />
@@ -110,8 +110,8 @@ export default function WhatsAppFloat() {
               </button>
             </div>
 
-            <div className="bg-[linear-gradient(180deg,#efe6d8_0%,#f7f4ef_100%)] px-4 py-4">
-              <div className="max-w-[90%] rounded-sm border border-border bg-surface px-3.5 py-3 text-[0.9rem] leading-relaxed text-ink shadow-sm">
+            <div className="bg-bg px-4 py-4">
+              <div className="max-w-[90%] rounded-xl border border-border-subtle bg-surface px-3.5 py-3 text-[0.9rem] leading-relaxed text-ink shadow-sm">
                 <p>
                   Hola, soy del equipo de {SITE.name}. Escriba su consulta y al
                   enviar abriremos WhatsApp con su mensaje listo.
@@ -119,7 +119,7 @@ export default function WhatsAppFloat() {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="border-t border-border bg-surface p-3">
+            <form onSubmit={handleSubmit} className="border-t border-border-subtle bg-surface p-3">
               <label htmlFor={`${panelId}-msg`} className="sr-only">
                 Mensaje para WhatsApp
               </label>
@@ -132,17 +132,17 @@ export default function WhatsAppFloat() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Escriba su mensaje…"
                 className={cn(
-                  "w-full resize-y rounded-sm border border-border bg-bg px-3 py-2.5",
+                  "w-full resize-y rounded-md border border-border bg-bg px-3 py-2.5",
                   "font-sans text-[0.95rem] text-ink placeholder:text-muted/80",
                   "transition-[border-color,box-shadow] duration-200",
-                  "focus:outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(196,163,90,.25)]",
+                  "focus:outline-none focus:border-gold focus:shadow-[0_0_0_3px_rgba(213,158,63,.28)]",
                 )}
               />
               <button
                 type="submit"
                 className={cn(
                   "mt-2.5 flex w-full items-center justify-center gap-2",
-                  "min-h-11 rounded-sm bg-[#25D366] px-4 py-2.5",
+                  "min-h-11 rounded-md bg-[#25D366] px-4 py-2.5",
                   "font-sans text-[0.95rem] font-semibold text-white",
                   "shadow-[0_8px_20px_rgba(37,211,102,.35)]",
                   "transition-[transform,box-shadow,background-color] duration-200 ease-[var(--ease-fluid)]",
@@ -167,7 +167,7 @@ export default function WhatsAppFloat() {
         onClick={() => setOpen((v) => !v)}
         className={cn(
           "relative z-[91] flex items-center gap-3 bg-[#25D366] text-white",
-          "pl-3.5 pr-5 py-3 rounded-sm font-semibold text-[0.9rem]",
+          "pl-3.5 pr-5 py-3 rounded-2xl max-sm:rounded-full font-semibold text-[0.9rem]",
           "shadow-[0_12px_34px_rgba(37,211,102,.4)] transition-[transform,box-shadow] duration-250 ease-[var(--ease-fluid)]",
           "hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(37,211,102,.5)] cursor-pointer",
           "max-sm:p-3.5",

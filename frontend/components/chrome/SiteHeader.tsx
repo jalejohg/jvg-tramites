@@ -131,7 +131,7 @@ export default function SiteHeader() {
             <button
               ref={toggleRef}
               type="button"
-              className="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-sm border border-border bg-surface text-ink lg:hidden"
+              className="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-md border border-border bg-surface text-ink lg:hidden"
               aria-expanded={open}
               aria-controls={menuId}
               aria-label={open ? "Cerrar menú" : "Abrir menú"}
